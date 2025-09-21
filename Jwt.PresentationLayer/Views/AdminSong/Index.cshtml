@@ -1,0 +1,64 @@
+﻿@model List<ResultSongDto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Şarkıların Listelenmesi</h4>
+                <p class="card-description">
+                    Şarkıların listeleme, ekleme, silme ve güncelleme işlemlerini buradan gerçekleştirebilirsiniz.
+                </p>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th> Id </th>
+                                <th> Kapak Fotoğrafı </th>
+                                <th> Sanatçı Fotoğrafı </th>
+                                <th> Şarkı </th>
+                                <th> Sanatçı </th>
+                                <th> Tür </th>
+                                <th> Süre </th>
+                                <th> Çıkış Tarihi </th>
+                                <th> Paket </th>
+                                <th> Sil </th>
+                                <th> Güncelle </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td> @item.Id </td>
+                                    <td class="py-1">
+                                        <img src="@item.CoverImageUrl" alt="image"
+                                             style="width:120px; height:80px; object-fit:cover; border-radius:4px;" />
+                                    </td>
+                                    <td class="py-1">
+                                        <img src="@item.ArtistImageUrl" alt="image"
+                                             style="width:120px; height:80px; object-fit:cover; border-radius:4px;" />
+                                    </td>
+                                    <td> @item.Title </td>
+                                    <td> @item.Artist </td>
+                                    <td> @item.Genre </td>
+                                    <td> @(((TimeSpan)item.Duration).ToString(@"mm\:ss")) </td>
+                                    <td> @item.ReleaseDate.ToString("dd MMM yyyy") </td>
+                                    <td> @item.PackageName </td>
+                                    <td> <a href="/AdminSong/DeleteSong/@item.Id" class="btn btn-danger btn-rounded btn-fw">Sil</a> </td>
+                                    <td> <a href="/AdminSong/UpdateSong/@item.Id" class="btn btn-warning btn-rounded btn-fw">Güncelle</a> </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <br />
+                    <a href="/AdminSong/CreateSong" class="btn btn-primary btn-rounded btn-fw">Yeni Şarkı Ekle</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

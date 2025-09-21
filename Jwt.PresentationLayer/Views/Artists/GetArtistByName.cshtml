@@ -1,0 +1,88 @@
+﻿@model ResultArtistDto
+
+@{
+    ViewData["Title"] = "GetArtistByName";
+    Layout = "~/Views/UILayout/Index.cshtml";
+}
+
+<div id="main" class="layout-row flex">
+    <!-- ############ Content START-->
+    <div id="content" class="flex ">
+        <!-- ############ Main START-->
+        <div>
+            <div class="page-content page-container" id="page-content">
+                <div class="padding sr">
+                    <div class="page-hero" data-id="1" data-source="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ad/32/4a/ad324a15-41e9-bc4e-76e3-fcc60cfd4a22/mzaf_706126316495578119.plus.aac.ep.m4a">
+                        <div class="media bg-media">
+                            <div class="media-content" style="background-image:url(@Model.ArtistImageUrl)"></div>
+                        </div>
+                        <div class="pos-rlt">
+                            <h1 class="display-3 font-weight-bold text-white">@Model.Artist</h1>                            
+                            <div class="py-4 toolbar align-items-center">
+                                <button class="btn btn-icon btn-play btn-rounded gd-primary" data-toggle-class=""></button>
+                                <span class="text-muted">43 şarkı, 5 albüm</span>
+                                <button class="btn btn-sm btn-outline-light btn-rounded mx-3" data-toggle-class>
+                                    <span class="d-inline">Takip Et</span>
+                                    <span class="d-none">Takip Ediliyor</span>
+                                </button>                              
+                            </div>                            
+                        </div>
+                    </div>
+                    <div class="d-md-flex pos-rlt">
+                        <div class="flex">
+                            <div class="d-flex">
+                                <ul class="nav nav-sm text-sm nav-pills nav-rounded py-4">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="#overview" data-toggle="tab">Popüler Şarkılar</a>
+                                    </li>                                    
+                                </ul>
+                            </div>
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="overview">
+                                    <div class="heading pt-5 pb-3 d-flex ">
+                                        <div>                                            
+                                            <h5 class="text-highlight sr-item">Popüler Şarkılar</h5>
+                                        </div>
+                                        <span class="flex"></span>
+                                    </div>
+                                    <div class="row list-row list-index">
+                                        @await Component.InvokeAsync("_List4SongsByArtistSongDetailComponent",
+                                        new { userPackageId = @ViewBag.UserPackageId, artist = Model.Artist })                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="min-width: 4rem"></div>
+                        <div class="w-xl w-auto-sm no-shrink">
+                            <div class="sticky">
+                                <div class="list mb-5">
+                                    <div class="list-item list-overlay r">
+                                        <div class="media ">
+                                            <a href="item.detail.html#" class="ajax media-content " style="background-image:url(/Images/img/b17.jpg)">
+                                            </a>
+                                            <div class="media-action ">
+                                            </div>
+                                        </div>
+                                        <div class="list-content p-5 text-center">
+                                            <div class="list-body ">
+                                                <a href="item.detail.html#" class="list-title title ajax h3 font-weight-bold">
+                                                    Hip-Hop 100 Listesi
+                                                </a>
+                                                <a href="artist.detail.html#" class="list-subtitle d-block text-muted h-1x subtitle ajax ">
+                                                    Şu anki en çılgın rap.
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                @await Component.InvokeAsync("_MostPopular5SongsTopTracksComponent")                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ############ Main END-->
+    </div>
+    <!-- ############ Content END-->
+</div>

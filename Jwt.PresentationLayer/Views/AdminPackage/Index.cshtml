@@ -1,0 +1,48 @@
+﻿@model List<ResultPackageDto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="row">    
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Paketlerin Listelenmesi</h4>
+                <p class="card-description">
+                    Paketlerin listeleme, ekleme, silme ve güncelleme işlemlerini buradan gerçekleştirebilirsiniz.
+                </p>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th> Id </th>
+                                <th> Paket </th>
+                                <th> Fiyat </th>
+                                <th> Açıklama </th>                             
+                                <th> Sil </th>                             
+                                <th> Güncelle </th>                             
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach(var item in Model)
+                            {
+                                <tr>
+                                    <td> @item.Id </td>
+                                    <td> @item.Name </td>
+                                    <td> @item.Price ₺ </td>
+                                    <td> @item.Description </td>
+                                    <td> <a href="/AdminPackage/DeletePackage/@item.Id" class="btn btn-danger btn-rounded btn-fw">Sil</a> </td>
+                                    <td> <a href="/AdminPackage/UpdatePackage/@item.Id" class="btn btn-warning btn-rounded btn-fw">Güncelle</a> </td>
+                                </tr>
+                            }                                                     
+                        </tbody>
+                    </table>
+                    <br />
+                    <a href="/AdminPackage/CreatePackage" class="btn btn-primary btn-rounded btn-fw">Yeni Paket Ekle</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

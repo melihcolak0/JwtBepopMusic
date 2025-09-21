@@ -1,0 +1,211 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/UILayout/Index.cshtml";
+}
+
+<div id="main" class="layout-row flex">
+    <!-- ############ Content START-->
+    <div id="content" class="flex ">
+        <!-- ############ Main START-->
+        <div>
+            <div class="page-content page-container" id="page-content">
+                <div class="padding sr">
+                    <div class="page-hero">
+                        <div class="media bg-media">
+                            <div class="media-content" style="background-image:url(/Images/img/b9.jpg)"></div>
+                        </div>
+                        <div class="slick" data-plugin="slick" data-option="{
+        slidesToShow: 1,
+          slidesToScroll: 1,
+        dots: true,
+        arrows: false,
+        fade: true,
+        autoplay: false,
+        rtl: false
+      }">
+                            <div data-bg="/Images/img/b9.jpg">
+                                <div class="pos-rlt">
+                                    <h2 class="display-3 font-weight-bold text-white">Müziğin Büyüsüne Kapıl</h2>
+                                    <div class="col-6 px-0 py-3 text-muted">
+                                        <p>Ruhunu harekete geçiren harika şarkılara dal. Yeni sesleri keşfet, favori hitlerini yeniden keşfet ve müziğin keyfini hiç olmadığı kadar çıkar.</p>
+                                    </div>
+                                    <a href="genres.html" class="btn ajax btn-rounded gd-primary text-white">Keşfet</a>
+                                    <a href="#" class="btn no-bg text-white">Paylaş</a>
+                                </div>
+                            </div>
+                            <div data-bg="/Images/img/b0.jpg" style="visibility: hidden">
+                                <div class="pos-rlt">
+                                    <h2 class="display-3 font-weight-bold text-white">Bepop'da En Popüler Listeler</h2>
+                                    <div class="col-6 px-0 py-3 text-muted">
+                                        <p>Bepop’un en popüler listelerine göz at. Trend olan hitlerden zamansız klasiklere kadar, dünyada kalpleri fetheden şarkıları keşfet.</p>
+                                    </div>
+                                    <a href="charts.html" class="btn ajax btn-rounded gd-primary text-white">Keşfet</a>
+                                    <a href="#" class="btn no-bg text-white">Paylaş</a>
+                                </div>
+                            </div>
+                            <div data-bg="/Images/img/b19.jpg" style="visibility: hidden">
+                                <div class="pos-rlt">
+                                    <h2 class="display-3 font-weight-bold text-white">Favori Sanatçını Bul</h2>
+                                    <div class="col-6 px-0 py-3 text-muted">
+                                        <p>Favori sanatçılarını keşfet ve en iyi parçalarını dinle. Çalma listelerini her gün ilhamla dolduran seslerle buluş.</p>
+                                    </div>
+                                    <a href="artists.html" class="btn ajax btn-rounded gd-primary text-white">Keşfet</a>
+                                    <a href="#" class="btn no-bg text-white">Paylaş</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    @await Component.InvokeAsync("_SongRecommendationDefaultComponent")
+
+                    @await Component.InvokeAsync("_MostPopularSongsDefaultComponent")
+                    
+                    <div class="row">
+
+                        @await Component.InvokeAsync("_Last5SongsDefaultComponent")
+
+                        <div class="col-md-6">
+                            <div class="heading pt-5 pb-3 d-flex ">
+                                <div>
+                                    <div class="text-muted sr-item">Yaklaşan</div>
+                                    <h5 class="text-highlight sr-item">Etkinlikler</h5>
+                                </div>
+                                <span class="flex"></span>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="list-item list-overlay r mb-3">
+                                        <div class="media media-4x3 gd-primary">
+                                            <a href="blog.detail.html#" class="ajax media-content " style="background-image:url()">
+                                            </a>
+                                            <div class="media-action ">
+                                            </div>
+                                        </div>
+                                        <div class="list-content p-4">
+                                            <div class="list-body ">
+                                                <a href="blog.detail.html#" class="list-title title ajax h5 font-weight-bold">
+                                                    Bahar Festivali
+                                                </a>
+                                                <a href="artist.detail.html#" class="list-subtitle d-block text-muted h-1x subtitle ajax ">
+                                                    Bahar aylarında müthiş bir etkinlik
+                                                </a>
+                                            </div>
+                                            <div class="list-footer ">
+                                                <div class="text-muted text-sm">
+                                                    Mayıs 11, 10:00 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="list-item list-overlay r mb-3">
+                                        <div class="media media-4x3 gd-success">
+                                            <a href="blog.detail.html#" class="ajax media-content " style="background-image:url( )">
+                                            </a>
+                                            <div class="media-action ">
+                                            </div>
+                                        </div>
+                                        <div class="list-content p-4">
+                                            <div class="list-body ">
+                                                <a href="blog.detail.html#" class="list-title title ajax h5 font-weight-bold">
+                                                    Müzik Festifali 2025
+                                                </a>
+                                                <a href="artist.detail.html#" class="list-subtitle d-block text-muted h-1x subtitle ajax ">
+                                                    2025 yılının son aylarında heyecan verici bir etkinlik                                                   
+                                                </a>
+                                            </div>
+                                            <div class="list-footer ">
+                                                <div class="text-muted text-sm">
+                                                    Kasım 8, 11:00
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="heading pt-5 pb-3 d-flex ">
+                                <div>
+                                    @* <div class="text-muted sr-item">Blog</div> *@
+                                    <h5 class="text-highlight sr-item">Blog</h5>
+                                </div>
+                                <span class="flex"></span>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="list-item r">
+                                        <div class="media media-16x9">
+                                            <a href="blog.detail.html#" class="ajax media-content " style="background-image:url(/Images/img/b15.jpg)">
+                                            </a>
+                                            <div class="media-action ">
+                                            </div>
+                                        </div>
+                                        <div class="list-content ">
+                                            <div class="list-body ">
+                                                <a href="blog.detail.html#" class="list-title title ajax ">                                                   
+                                                    Melankoli Tınıları
+                                                </a>
+                                            </div>
+                                            <div class="list-footer ">
+                                                <div class="text-muted text-sm">
+                                                    Şubat 24, 12:30
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="list-item r">
+                                        <div class="media media-16x9">
+                                            <a href="blog.detail.html#" class="ajax media-content " style="background-image:url(/Images/img/b16.jpg)">
+                                            </a>
+                                            <div class="media-action ">
+                                            </div>
+                                        </div>
+                                        <div class="list-content ">
+                                            <div class="list-body ">
+                                                <a href="blog.detail.html#" class="list-title title ajax ">
+                                                    Rock'n Roll Günlüğü
+                                                </a>
+                                            </div>
+                                            <div class="list-footer ">
+                                                <div class="text-muted text-sm">
+                                                    Mayıs 26, 13:30
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="list-item r">
+                                        <div class="media media-16x9">
+                                            <a href="blog.detail.html#" class="ajax media-content " style="background-image:url(/Images/img/b17.jpg)">
+                                            </a>
+                                            <div class="media-action ">
+                                            </div>
+                                        </div>
+                                        <div class="list-content ">
+                                            <div class="list-body ">
+                                                <a href="blog.detail.html#" class="list-title title ajax ">
+                                                    Güneş Gözlüğü ve Caz
+                                                </a>
+                                            </div>
+                                            <div class="list-footer ">
+                                                <div class="text-muted text-sm">
+                                                    Haziran 9, 09:34
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ############ Main END-->
+    </div>
+    <!-- ############ Content END-->
+</div>

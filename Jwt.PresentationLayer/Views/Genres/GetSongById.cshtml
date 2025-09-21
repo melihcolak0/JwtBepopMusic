@@ -1,0 +1,126 @@
+﻿@model ResultSongDto
+
+@{
+    ViewData["Title"] = "GetSongById";
+    Layout = "~/Views/UILayout/Index.cshtml";
+}
+
+<div id="main" class="layout-row flex">
+    <!-- ############ Content START-->
+    <div id="content" class="flex ">
+        <!-- ############ Main START-->
+        <div>
+            <div class="page-content page-container" id="page-content">
+                <div class="padding sr">
+                    <div class="page-hero" data-id="@Model.Id" data-source="@Model.DataSourceUrl">
+                        <div class="media bg-media">
+                            <div class="media-content" style="background-image:url(@Model.ArtistImageUrl)"></div>
+                        </div>
+                        <div class="pos-rlt text-white">
+                            <a href="#" class="ajax text-primary h5 subtitle">@Model.Artist</a>
+                            <h1 class="display-3 font-weight-bold mb-0 text-white title">@Model.Title</h1>
+                            <div class="py-4 toolbar align-items-center">
+                                <button class="btn btn-raised btn-rounded btn-icon gd-primary text-white btn-play" data-toggle-class></button>
+                                <span class="text-fade">@(((TimeSpan)Model.Duration).ToString(@"mm\:ss"))</span>
+                                <button class="btn no-bg btn-icon btn-rounded" data-toggle-class>
+                                    <i data-feather="heart" class="active-solid active-primary"></i>
+                                </button>
+                                <button class="btn no-bg btn-icon btn-rounded btn-more" data-toggle="dropdown">
+                                    <i data-feather="more-horizontal"></i>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right"></div>
+                            </div>
+                            <div class="mb-2">
+                                <span class="text-fade"></span>
+                                <a href="#" class="text-white ajax">@Model.Genre</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-md-flex pos-rlt">
+                        <div class="flex">
+                            <div class="heading pt-5 pb-3 d-flex ">
+                                <div>
+                                    <div class="text-muted sr-item">@Model.Artist</div>
+                                    <h5 class="text-highlight sr-item">Sanatçının En Popüler Şarkıları</h5>
+                                </div>
+                                <span class="flex"></span>
+                            </div>
+                            <div class="row list-row list-index">
+                                <div class="col-12" data-id="@Model.Id" data-category="@Model.Genre" data-tag="awd" data-source="@Model.DataSourceUrl">
+                                    <div class="list-item r">
+                                        <div class="media ">
+                                            <a href="#" class="ajax media-content " style="background-image:url(@Model.CoverImageUrl)">
+                                            </a>
+                                            <div class="media-action media-action-overlay">
+                                                <button class="btn btn-icon no-bg no-shadow hide-row" data-toggle-class>
+                                                    <i data-feather="heart" class="active-fill"></i>
+                                                </button>
+                                                <button class="btn btn-raised btn-icon btn-rounded bg--white btn-play"></button>
+                                                <button class="btn btn-icon no-bg no-shadow hide-row btn-more" data-toggle="dropdown">
+                                                    <i data-feather="more-horizontal"></i>
+                                                </button>
+                                                <div class="dropdown-menu dropdown-menu-right"></div>
+                                            </div>
+                                        </div>
+                                        <div class="list-content text-center">
+                                            <div class="list-body ">
+                                                <a href="#" class="list-title title ajax h-1x">
+                                                    @Model.Title
+                                                </a>
+                                                <a href="#" class="list-subtitle d-block text-muted h-1x subtitle ajax ">
+                                                    @Model.Artist
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="list-action  show-row">
+                                            <div class="d-flex align-items-center">
+                                                <div class="px-3 text-sm text-muted d-none d-md-block">@(((TimeSpan)Model.Duration).ToString(@"mm\:ss"))</div>
+                                                <button class="btn btn-icon no-bg no-shadow" data-toggle-class>
+                                                    <i data-feather="heart" class="active-primary"></i>
+                                                </button>
+                                                <button class="btn btn-icon no-bg no-shadow btn-more" data-toggle="dropdown">
+                                                    <i data-feather="more-horizontal"></i>
+                                                </button>
+                                                <div class="dropdown-menu dropdown-menu-right"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                               
+                                @await Component.InvokeAsync("_List4SongsByArtistSongDetailComponent",
+                                new { userPackageId = ViewBag.UserPackageId, artist = Model.Artist, excludeSongId = Model.Id })
+                            </div>
+                        </div>
+                        <div style="min-width: 4rem"></div>
+                        <div class="w-xl w-auto-sm no-shrink">
+                            <div class="sticky">
+                                <div class="list mb-5">
+                                    <div class="list-item list-overlay r">
+                                        <div class="media ">
+                                            <a href="item.detail.html#" class="ajax media-content " style="background-image:url(/Images/img/b14.jpg)">
+                                            </a>
+                                            <div class="media-action ">
+                                            </div>
+                                        </div>
+                                        <div class="list-content p-5 text-center">
+                                            <div class="list-body ">
+                                                <a href="item.detail.html#" class="list-title title ajax h3 font-weight-bold">
+                                                    Hip-Hop 100 Listesi
+                                                </a>
+                                                <a href="artist.detail.html#" class="list-subtitle d-block text-muted h-1x subtitle ajax ">
+                                                    Şu anki en çılgın rap.
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                @await Component.InvokeAsync("_MostPopular5SongsTopTracksComponent")
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ############ Main END-->
+    </div>
+    <!-- ############ Content END-->
+</div>

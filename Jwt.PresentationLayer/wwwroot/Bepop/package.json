@@ -1,0 +1,57 @@
+{
+  "name": "Bepop",
+  "version": "1.0.2",
+  "description": "Music Web Application",
+  "scripts": {
+    "start": "node node_modules/http-server/bin/http-server -o"
+  },
+  "keywords": [],
+  "repository": "",
+  "author": "flatfull.com",
+  "dependencies": {
+    "bootstrap": "^4.1.0",
+    "feather-icons": "^4.8.1",
+    "jquery": "^3.2.1",
+    "jscroll": "^2.4.1",
+    "list.js": "^1.5.0",
+    "pjax": "^0.2.6",
+    "plyr": "^3.3.10",
+    "popper.js": "^1.12.5",
+    "jquery-fullscreen-plugin": "^1.0.0",
+    "scrollreveal": "^3.3.6",
+    "slick-carousel": "^1.8.1",
+    "typeahead.js": "^0.11.1"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-compress": "^1.4.3",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^2.2.1",
+    "grunt-contrib-htmlmin": "^2.4.0",
+    "grunt-contrib-uglify": "^3.1.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sass": "^2.0.0",
+    "grunt-usemin": "^3.1.1",
+    "http-server": "^0.6.1",
+    "load-grunt-tasks": "^3.5.2"
+  },
+  "copy": [
+    "bootstrap/scss/**",
+    "bootstrap/dist/js/bootstrap.min.js",
+    "bootstrap/dist/css/bootstrap.min.css",
+    "feather-icons/dist/feather.min.js",
+    "jquery/dist/jquery.min.js",
+    "jquery-fullscreen-plugin/jquery.fullscreen-min.js",
+    "jscroll/dist/jquery.jscroll.min.js",
+    "list.js/dist/**",
+    "pjax/pjax.min.js",
+    "plyr/dist/**",
+    "popper.js/dist/umd/popper.min.js",
+    "scrollreveal/dist/scrollreveal.min.js",
+    "slick-carousel/slick/slick.min.js",
+    "slick-carousel/slick/slick.css",
+    "typeahead.js/dist/typeahead.bundle.min.js"
+  ]
+}

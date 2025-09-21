@@ -1,0 +1,50 @@
+﻿@model List<ResultUserDto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Kullanıcıların Listelenmesi</h4>
+                <p class="card-description">
+                    Kullanıcıların listeleme, ekleme, silme ve güncelleme işlemlerini buradan gerçekleştirebilirsiniz.
+                </p>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th> Id </th>
+                                <th> Adı ve Soyadı </th>
+                                <th> Kullanıcı Adı </th>
+                                <th> E-Mail </th>
+                                <th> Şehir </th>
+                                <th> Rol </th>
+                                <th> Paket </th>
+                                <th> Kaldır </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td> @item.Id </td>
+                                    <td> @item.NameSurname </td>
+                                    <td> @item.Username </td>
+                                    <td> @item.Email </td>
+                                    <td> @item.City </td>
+                                    <td> @item.Role </td>
+                                    <td> @item.PackageName </td>
+                                    <td> <a href="/AdminUser/DeleteUser/@item.Id" class="btn btn-danger btn-rounded btn-fw">Kaldır</a> </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

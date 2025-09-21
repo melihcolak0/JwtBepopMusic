@@ -1,0 +1,34 @@
+﻿@model UpdatePackageDto
+
+@{
+    ViewData["Title"] = "UpdatePackage";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="row">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Paket Güncelleme</h4>
+                <p class="card-description"> Paket güncelleme işlemini buradan gerçekleştirebilirsiniz. </p>
+                <form method="post" class="forms-sample">
+                    <input type="hidden" asp-for="Id">
+                    <div class="form-group">
+                        <label>Paket Adı</label>
+                        <input type="text" class="form-control" asp-for="Name">
+                    </div>
+                    <div class="form-group">
+                        <label>Fiyat</label>
+                        <input type="text" class="form-control" asp-for="Price">
+                    </div>
+                    <div class="form-group">
+                        <label>Açıklama</label>
+                        <textarea class="form-control" asp-for="Description" style="height:120px"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary me-2">Güncelle</button>
+                    <a href="/AdminPackage/Index" class="btn btn-light">İptal Et</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

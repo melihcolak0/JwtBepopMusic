@@ -1,0 +1,311 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<head>
+    <meta charset="utf-8" />
+    <title>Discover | Bepop - Music Web Application</title>
+    <meta name="description" content="Responsive, Bootstrap, BS4" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <!-- style -->
+    <!-- build:css ../assets/css/site.min.css -->
+    <link rel="stylesheet" href="/Theme/assets/css/site.min.css" type="text/css" />
+    <link rel="stylesheet" href="/Theme/libs/slick-carousel/slick/slick.css" type="text/css" />
+    <link rel="stylesheet" href="/Theme/libs/slick-carousel/slick/slick-theme.css" type="text/css" />
+    <link rel="stylesheet" href="/Theme/assets/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="/Theme/assets/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="/Theme/assets/css/style.css" type="text/css" />
+    <!-- endbuild -->
+</head>
+<body class="layout-column bg-dark">
+    <header id="header" class="page-header scroll-header fixed">
+        <div class="navbar navbar-expand-lg">
+            <!-- brand -->
+            <a href="index.html" class="navbar-brand text-white ">
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1" fill="#000"></circle>
+                    <circle cx="12" cy="12" r="2" stroke="currentColor" stroke-width="1"></circle>
+                    <g class="loading-spin" stroke="currentColor" stroke-width="1" style="transform-origin: 12px 12px">
+                        <path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"></path>
+                    </g>
+                </svg>
+                <!-- <img src="../assets/img/logo.png" alt="..."> -->
+                <span class="hidden-folded d-inline l-s-n-1x ">Bepop</span>
+            </a>
+            <!-- / brand -->
+            <!-- Navbar collapse -->
+            <div class="collapse navbar-collapse order-2 order-lg-1" id="navbarCollapse">
+                <ul class="navbar-nav" data-nav>
+                    <li class="nav-item">
+                        <a href="/Default/Index" class="nav-link">
+                            <span class="nav-text">Keşfet</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/Charts/Index" class="nav-link">
+                            <span class="nav-text">Listeler</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/Genres/Index" class="nav-link">
+                            <span class="nav-text">Türler</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/Artists/Index" class="nav-link">
+                            <span class="nav-text">Sanatçılar</span>
+                        </a>
+                    </li>                    
+                </ul>
+                <form class="input-group m-2 my-lg-0 ">
+                    <span class="input-group-prepend">
+                        <button type="button" class="btn no-shadow no-bg px-0"><i data-feather="search"></i></button>
+                    </span>
+                    <input type="text" class="form-control no-border no-shadow no-bg typeahead" placeholder="Ara..." data-plugin="typeahead">
+                </form>
+            </div>
+            <ul class="nav navbar-menu order-1 order-lg-2">
+                <li class="nav-item d-none d-sm-block">
+                    <a class="nav-link px-2" data-toggle="fullscreen" data-plugin="fullscreen">
+                        <i data-feather="maximize"></i>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link px-2">
+                        <i data-feather="upload" class="d-lg-none"></i><span class="btn btn-rounded btn-sm gd-primary text-white d-none d-lg-block">Yükselt</span>
+                    </a>
+                </li>
+                <!-- User dropdown menu -->
+                <li class="nav-item dropdown">
+                    <a href="#" data-toggle="dropdown" class="nav-link d-flex align-items-center py-0 px-lg-0 px-2 text-color">
+                        <span class="avatar w-24"><img src="/Bepop/assets/img/a1.jpg" alt="..."></span>
+                        @if (ViewBag.UserName != null)
+                        {
+                            <span class="ml-2 text-white">@ViewBag.UserName</span>
+                        }
+                        else
+                        {
+                            <span class="ml-2 text-white">Kullanıcı Adı (Rol)</span>
+                        }
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right mt-3 animate fadeIn">
+                        <a class="dropdown-item" href="../html/artist.detail.html">
+                            <span>Profil</span>
+                        </a>
+                        <a class="dropdown-item" href="../html/artist.detail.html#tracks">
+                            <span>Parçalar</span>
+                        </a>
+                        <a class="dropdown-item" href="../html/artist.detail.html#albums">
+                            <span>Albümler</span>
+                        </a>
+                        <a class="dropdown-item" href="../html/artist.detail.html#liked">
+                            <span>Beğeniler</span>
+                        </a>
+                        <div class="dropdown-divider"></div>                        
+                        <a class="dropdown-item" asp-controller="Login" asp-action="Logout">Çıkış Yap</a>
+                    </div>
+                </li>
+                <!-- Navarbar toggle btn -->
+                <li class="nav-item d-lg-none">
+                    <a href="#" class="nav-link px-2" data-toggle="collapse" data-toggle-class data-target="#navbarCollapse">
+                        <i data-feather="menu"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    @RenderBody()    
+
+    <footer id="footer" class="page-footer ">
+        <div class="padding bg-dark  b-t">
+            <div class="page-container">
+                <div class="py-5 text-inherit text-hover-primary">
+                    <div class="row mb-5">
+                        <div class="col-6 col-md-4">
+                            <div class="mb-3">
+                                <!-- brand -->
+                                <a href="index.html" class="navbar-brand text-white ">
+                                    <svg width="48" height="48" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
+                                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1" fill="#000"></circle>
+                                        <circle cx="12" cy="12" r="2" stroke="currentColor" stroke-width="1"></circle>
+                                        <g class="loading-spin" stroke="currentColor" stroke-width="1" style="transform-origin: 12px 12px">
+                                            <path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"></path>
+                                        </g>
+                                    </svg>
+                                    <!-- <img src="../assets/img/logo.png" alt="..."> -->
+                                    <span class="hidden-folded d-inline l-s-n-1x ">Bepop</span>
+                                </a>
+                                <!-- / brand -->
+                            </div>
+                            <div class="px-1">
+                                <div class="dropdown mt-5 ml-md-5">
+                                    <button class="btn w-sm btn-dark text-align-auto b-a sorting" data-toggle="dropdown">Türkçe</button>
+                                    <div class="dropdown-menu">
+                                        <a href="#" class="dropdown-item">İngilizce</a>
+                                        <a href="#" class="dropdown-item">Fransızca</a>
+                                        <a href="#" class="dropdown-item">Korece</a>
+                                        <a href="#" class="dropdown-item">Çince</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-2">
+                            <h5 class="mb-3 text-muted">Sayfalar</h5>
+                            <ul class="list-unstyled l-h-2x text-highlight">
+                                <li>
+                                    <a href="../html/artists.html">Sanatçılar</a>
+                                </li>
+                                <li>
+                                    <a href="../html/charts.html">Listeler</a>
+                                </li>
+                                <li>
+                                    <a href="../html/genres.html">Türler</a>
+                                </li>
+                                <li>
+                                    <a href="../html/page.about.html">Hakkımızda</a>
+                                </li>
+                                <li>
+                                    <a href="../html/blog.html">Blog</a>
+                                </li>
+                                <li>
+                                    <a href="../html/signin.html">Giriş Yap</a>
+                                </li>
+                                <li>
+                                    <a href="../html/signup.html">Kayıt Ol</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-2">
+                            <h5 class="mb-3 text-muted">Bepop Hesabı</h5>
+                            <ul class="list-unstyled l-h-2x text-highlight">
+                                <li>
+                                    <a href="../html/artist.detail.html">Profil</a>
+                                </li>
+                                <li>
+                                    <a href="../html/artist.detail.html#albums">Albümler</a>
+                                </li>
+                                <li>
+                                    <a href="../html/artist.detail.html#tracks">Müzikler</a>
+                                </li>
+                                <li>
+                                    <a href="../html/artist.detail.html#playlist">Çalma Listeleri</a>
+                                </li>
+                                <li>
+                                    <a href="../html/artist.detail.html#liked">Beğenilenler</a>
+                                </li>
+                                <li>
+                                    <a href="../html/artist.detail.html#following">Takip Edilenler</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-2">
+                            <h5 class="mb-3 text-muted">Yardım</h5>
+                            <ul class="list-unstyled l-h-2x text-highlight">
+                                <li>
+                                    <a href="../docs">Dokümantasyon</a>
+                                </li>
+                                <li>
+                                    <a href="../docs/changelog.html">Değişim Günlüğü</a>
+                                </li>
+                                <li>
+                                    <a href="../docs/changelog.html">Güncellemeler</a>
+                                </li>
+                            </ul>
+                        </div>
+                        @* <div class="col-6 col-md-2 text-md-right">
+                            <h5 class="mb-3 text-muted">Bizi Takip Edin</h5>
+                            <a href="#">Facebook</a>
+                            <a href="#">Twitter</a>
+                            <a href="#">Instagram</a>
+                        </div> *@
+                        <div>
+                            <h5 class="mb-3 text-muted">Bizi Takip Edin</h5>
+                            <a href="#" class="btn btn-icon btn-rounded indigo text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 264 512">
+                                    <path fill="currentColor" d="M76.7 512V283H0v-91h76.7v-71.7C76.7 42.4 124.3 0 193.8 0c33.3 0 61.9 2.5 70.2 3.6V85h-48.2c-37.8 0-45.1 18-45.1 44.3V192H256l-11.7 91h-73.6v229" class=""></path>
+                                </svg>
+                            </a>
+                            <a href="#" class="btn btn-icon btn-rounded cyan text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512">
+                                    <path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
+                                          class=""></path>
+                                </svg>
+                            </a>
+                            <a href="#" class="btn btn-icon btn-rounded red text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 640 512">
+                                    <path fill="currentColor" d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"
+                                          class=""></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="text-center py-5">
+                        <span class="text-muted text-sm">&copy; Copyright. Bepop - Music Web Application, Tüm hakları saklıdır.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-plugin="plyr" class="plyrist plyrist_audio plyr-list-popup player bg-overlay b-t fixed-bottom" id="plyrist">
+            <audio controls hidden></audio>
+            <div class="plyr-list bg-dark-overlay" style="display:none">
+            </div>
+        </div>
+    </footer>
+    <!-- jQuery (önce jQuery yüklenmeli) -->
+    <script src="/Theme/libs/jquery/dist/jquery.min.js"></script>
+
+    <!-- Popper (Bootstrap için gerekli) -->
+    <script src="/Theme/libs/popper.js/dist/umd/popper.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="/Theme/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Pjax (ajax navigation) -->
+    <script src="/Theme/libs/pjax/pjax.min.js"></script>
+
+    <!-- Ajax helper -->
+    <script src="/Theme/assets/js/ajax.js"></script>
+
+    <!-- Scrollreveal -->
+    <script src="/Theme/libs/scrollreveal/dist/scrollreveal.min.js"></script>
+
+    <!-- Slick carousel -->
+    <script src="/Theme/libs/slick-carousel/slick/slick.min.js"></script>
+
+    <!-- Feather icons -->
+    <script src="/Theme/libs/feather-icons/dist/feather.min.js"></script>
+
+    <!-- Lazyload config ve core (plugin.js'den önce gelmeli çünkü pluginler bunları kullanıyor olabilir) -->
+    <script src="/Theme/assets/js/lazyload.config.js"></script>
+    <script src="/Theme/assets/js/lazyload.js"></script>
+
+    <!-- Pluginler (jQuery pluginleri burada tanımlanıyor) -->
+    <script src="/Theme/assets/js/plugin.js"></script>
+
+    <!-- Theme (pluginlere bağımlı olduğu için en sona alınmalı) -->
+    <script src="/Theme/assets/js/theme.js"></script>
+
+    <script>
+            async function increaseListen(songId) {
+            try {
+                const response = await fetch('/Genres/IncreaseListenCount?songId=' + songId, {
+                    method: 'POST'
+                });
+
+                if (response.ok) {
+                    console.log("Dinleme sayısı artırıldı 🎵");
+                } else {
+                    console.log("Artırma başarısız ❌", response.status);
+                }
+            } catch (e) {
+                console.error("API hatası:", e);
+            }
+        }
+    </script>
+
+</body>
+</html>

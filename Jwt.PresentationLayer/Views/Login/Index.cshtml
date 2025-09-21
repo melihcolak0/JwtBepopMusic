@@ -1,0 +1,96 @@
+﻿@model LoginUserDto
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<head>
+    <meta charset="utf-8" />
+    <title>Giriş Yap | Bepop - Müzik Web Uygulaması</title>
+    <meta name="description" content="Responsive, Bootstrap, BS4" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <!-- style -->
+    <!-- build:css ../assets/css/site.min.css -->
+    <link rel="stylesheet" href="/Theme/libs/slick-carousel/slick/slick.css" type="text/css" />
+    <link rel="stylesheet" href="/Theme/libs/slick-carousel/slick/slick-theme.css" type="text/css" />
+    <link rel="stylesheet" href="/Theme/assets/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="/Theme/assets/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="/Theme/assets/css/style.css" type="text/css" />
+    <!-- endbuild -->
+</head>
+<body class="layout-row bg-dark">
+    <div class="d-flex flex-column flex">
+        <div class="row no-gutters h-100">
+            <div class="col-md-6 bg-dark bg-img" style="background-image:url(/Images/img/b6.jpg)">
+                <div class="p-3 p-md-5 d-flex flex-column h-100">
+                    <h4 class="mb-3 text-white">Bepop</h4>
+                    <div class="text-fade">Music Web Uygulaması</div>
+                    <div class="d-flex flex align-items-center justify-content-center">
+                    </div>
+                    <div class="d-flex text-sm text-fade">
+                        <a href="index.html" class="text-white">Hakkımda</a>
+                        <span class="flex"></span>
+                        <a href="#" class="text-white mx-1">Şartlarımız</a>
+                        <a href="#" class="text-white mx-1">Politikalarımız</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6" id="content-body">
+                <div class="p-3 p-md-5">
+                    <h5>Tekrardan Hoş Gelidiniz!</h5>
+                    <p>
+                        <small class="text-muted">Hesabınızı yönetmek için giriş yapın</small>
+                    </p>
+                    <form method="post">
+                        <div class="form-group">  
+                            <label>E-Mail Adresiniz</label>
+                            <input type="email" class="form-control" placeholder="E-Mail Adresiniz" asp-for="Email">
+                        </div>
+                        <div class="form-group">
+                            <label>Şifreniz</label>
+                            <input type="password" class="form-control" placeholder="Şifreniz" asp-for="Password">
+                            <div class="my-3 text-right">
+                                <a href="forgot-password.html" class="text-muted">Şifrenizi mi unuttunuz?</a>
+                            </div>
+                        </div>
+                        <div class="checkbox mb-3">
+                            <label class="ui-check">
+                                <input type="checkbox">
+                                <i></i> Beni hatırla
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary mb-4">Giriş Yap</button>
+                        <div>
+                            Bir hesabınız yok mu?
+                            <a href="/Register/Index" class="text-primary">Kayıt Olun</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- build:js ../assets/js/site.min.js -->
+    <!-- jQuery -->
+    <script src="/Theme/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="/Theme/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="/Theme/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- ajax page -->
+    <script src="/Theme/libs/pjax/pjax.min.js"></script>
+    <script src="/Theme/assets/js/ajax.js"></script>
+    <!-- lazyload plugin -->
+    <script src="/Theme/assets/js/lazyload.config.js"></script>
+    <script src="/Theme/assets/js/lazyload.js"></script>
+    <script src="/Theme/assets/js/plugin.js"></script>
+    <!-- scrollreveal -->
+    <script src="/Theme/libs/scrollreveal/dist/scrollreveal.min.js"></script>
+    <script src="/Theme/libs/slick-carousel/slick/slick.min.js"></script>
+    <!-- feather icons -->
+    <script src="/Theme/libs/feather-icons/dist/feather.min.js"></script>
+    <!-- theme -->
+    <script src="/Theme/assets/js/theme.js"></script>
+    <!-- endbuild -->
+</body>
+</html>

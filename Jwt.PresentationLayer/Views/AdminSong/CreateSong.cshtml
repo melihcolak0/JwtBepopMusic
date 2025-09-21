@@ -1,0 +1,74 @@
+﻿@model CreateSongDto
+
+@{
+    ViewData["Title"] = "CreateSong";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="row">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Yeni Şarkı Ekleme</h4>
+                <p class="card-description"> Şarkı ekleme işlemini buradan gerçekleştirebilirsiniz. </p>
+                <form method="post" class="forms-sample">
+                    <div class="form-group">
+                        <label>Şarkı Adı</label>
+                        <input type="text" class="form-control" asp-for="Title">
+                    </div>
+                    <div class="form-group">
+                        <label>Sanatçı Adı ve Soyadı</label>
+                        <input type="text" class="form-control" asp-for="Artist">
+                    </div>
+                    <div class="form-group">
+                        <label>Albüm Adı</label>
+                        <input type="text" class="form-control" asp-for="Album">
+                    </div>
+                    <div class="form-group">
+                        <label>Tür</label>
+                        <input type="text" class="form-control" asp-for="Genre">
+                    </div>
+                    <div class="form-group">
+                        <label>Albüm Adı</label>
+                        <input type="text" class="form-control" asp-for="Album">
+                    </div>
+                    <div class="form-group">
+                        <label>Süre</label>
+                        <input type="text" class="form-control" asp-for="Duration" placeholder="00:03:41">
+                    </div>
+                    <div class="form-group">
+                        <label>Çıkış Tarihi</label>
+                        <input type="date" class="form-control" asp-for="ReleaseDate">
+                    </div>                    
+                    <div class="form-group">
+                        <label>Paket Seçimi</label>
+                        <select asp-for="PackageId" class="form-control">
+                            <option value="">-- Seçiniz --</option>
+                            @if (ViewBag.Packages != null)
+                            {
+                                foreach (var p in ViewBag.Packages)
+                                {
+                                    <option value="@p.Id">@p.Name</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Veri Kaynağı Url</label>
+                        <input type="text" class="form-control" asp-for="DataSourceUrl">
+                    </div>
+                    <div class="form-group">
+                        <label>Kapak Fotoğrafı Url</label>
+                        <input type="text" class="form-control" asp-for="CoverImageUrl">
+                    </div>
+                    <div class="form-group">
+                        <label>Sanatçı Fotoğrafı Url</label>
+                        <input type="text" class="form-control" asp-for="ArtistImageUrl">
+                    </div>
+                    <button type="submit" class="btn btn-primary me-2">Ekle</button>
+                    <a href="/AdminSong/Index" class="btn btn-light">İptal Et</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

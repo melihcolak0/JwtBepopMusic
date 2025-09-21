@@ -1,0 +1,1590 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        <title>Charts | Bepop - Music Web Application</title>
+        <meta name="description" content="Responsive, Bootstrap, BS4" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <!-- style -->
+        <!-- build:css ../assets/css/site.min.css -->
+        <link rel="stylesheet" href="../libs/slick-carousel/slick/slick.css" type="text/css" />
+        <link rel="stylesheet" href="../libs/slick-carousel/slick/slick-theme.css" type="text/css" />
+        <link rel="stylesheet" href="../assets/css/bootstrap.css" type="text/css" />
+        <link rel="stylesheet" href="../assets/css/theme.css" type="text/css" />
+        <link rel="stylesheet" href="../assets/css/style.css" type="text/css" />
+        <!-- endbuild -->
+    </head>
+    <body class="layout-column bg-dark">
+        <header id="header" class="page-header scroll-header fixed">
+            <div class="navbar navbar-expand-lg">
+                <!-- brand -->
+                <a href="index.html" class="navbar-brand text-white ">
+                    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1" fill="#000"></circle>
+                        <circle cx="12" cy="12" r="2" stroke="currentColor" stroke-width="1"></circle>
+                        <g class="loading-spin" stroke="currentColor" stroke-width="1" style="transform-origin: 12px 12px">
+                            <path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"></path>
+                        </g>
+                    </svg>
+                    <!-- <img src="../assets/img/logo.png" alt="..."> -->
+                    <span class="hidden-folded d-inline l-s-n-1x ">Bepop</span>
+                </a>
+                <!-- / brand -->
+                <!-- Navbar collapse -->
+                <div class="collapse navbar-collapse order-2 order-lg-1" id="navbarCollapse">
+                    <ul class="navbar-nav" data-nav>
+                        <li class="nav-item">
+                            <a href="../html/discover.html" class="nav-link">
+                                <span class="nav-text">Discover</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../html/charts.html" class="nav-link">
+                                <span class="nav-text">Charts</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../html/genres.html" class="nav-link">
+                                <span class="nav-text">Genres</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../html/artists.html" class="nav-link">
+                                <span class="nav-text">Artists</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../html/blog.html" class="nav-link">
+                                <span class="nav-text">Blog</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <form class="input-group m-2 my-lg-0 ">
+                        <span class="input-group-prepend">
+          <button type="button" class="btn no-shadow no-bg px-0"><i data-feather="search"></i></button>
+        </span>
+                        <input type="text" class="form-control no-border no-shadow no-bg typeahead" placeholder="Search..." data-plugin="typeahead">
+                    </form>
+                </div>
+                <ul class="nav navbar-menu order-1 order-lg-2">
+                    <li class="nav-item d-none d-sm-block">
+                        <a class="nav-link px-2" data-toggle="fullscreen" data-plugin="fullscreen">
+                            <i data-feather="maximize"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link px-2">
+                            <i data-feather="upload" class="d-lg-none"></i><span class="btn btn-rounded btn-sm gd-primary text-white d-none d-lg-block">Upload</span>
+                        </a>
+                    </li>
+                    <!-- User dropdown menu -->
+                    <li class="nav-item dropdown">
+                        <a href="#" data-toggle="dropdown" class="nav-link d-flex align-items-center py-0 px-lg-0 px-2 text-color">
+                            <span class="avatar w-24"><img src="../assets/img/a2.jpg" alt="..."></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right mt-3 animate fadeIn">
+                            <a class="dropdown-item" href="../html/artist.detail.html">
+                                <span>Profile</span>
+                            </a>
+                            <a class="dropdown-item" href="../html/artist.detail.html#tracks">
+                                <span>Tracks</span>
+                            </a>
+                            <a class="dropdown-item" href="../html/artist.detail.html#albums">
+                                <span>Albums</span>
+                            </a>
+                            <a class="dropdown-item" href="../html/artist.detail.html#liked">
+                                <span>Likes</span>
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="../html/signin.html">Sign out</a>
+                        </div>
+                    </li>
+                    <!-- Navarbar toggle btn -->
+                    <li class="nav-item d-lg-none">
+                        <a href="#" class="nav-link px-2" data-toggle="collapse" data-toggle-class data-target="#navbarCollapse">
+                            <i data-feather="menu"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <div id="main" class="layout-row flex">
+            <!-- ############ Content START-->
+            <div id="content" class="flex ">
+                <!-- ############ Main START-->
+                <div>
+                    <div class="page-content page-container" id="page-content">
+                        <div class="padding sr" id="list" data-plugin="list" data-page="50">
+                            <div class="page-hero">
+                                <div class="media bg-media">
+                                    <div class="media-content">
+                                    </div>
+                                </div>
+                                <div class="pos-rlt">
+                                    <h1 class="display-3 font-weight-bold text-white">Weekly Top Charts</h1>
+                                </div>
+                            </div>
+                            <div class="d-lg-flex pos-rlt">
+                                <div class="flex">
+                                    <div class="heading pt-5 pb-3 d-flex ">
+                                        <div>
+                                            <div class="text-muted sr-item">Top</div>
+                                            <h5 class="text-highlight sr-item">Charts</h5>
+                                        </div>
+                                        <span class="flex"></span>
+                                    </div>
+                                    <div class="pos-rlt z-index-1">
+                                        <div class="d-flex py-2 sr-item">
+                                            <div class="dropdown my-2">
+                                                <button class="btn btn-outline-light sorting w-sm w-auto-xs text-align-auto" data-toggle="dropdown"><span>New</span></button>
+                                                <div class="dropdown-menu">
+                                                    <a href="#" class="dropdown-item sort" data-sort="num" data-order="desc">Popular</a>
+                                                    <a href="#" class="dropdown-item sort" data-sort="author" data-order="desc">New</a>
+                                                </div>
+                                            </div>
+                                            <div class="flex"></div>
+                                            <div class="dropdown my-2 mx-2">
+                                                <button class="btn btn-outline-light sorting w-sm w-auto-xs text-align-auto" data-toggle="dropdown"><span>All countries</span></button>
+                                                <div class="dropdown-menu" id="filter-tag">
+                                                    <a href="#" class="dropdown-item">All countries</a>
+                                                    <a href="#" class="dropdown-item">Australia</a>
+                                                    <a href="#" class="dropdown-item">Canada</a>
+                                                    <a href="#" class="dropdown-item">France</a>
+                                                    <a href="#" class="dropdown-item">Germany</a>
+                                                    <a href="#" class="dropdown-item">Ireland</a>
+                                                    <a href="#" class="dropdown-item">Netherlands</a>
+                                                    <a href="#" class="dropdown-item">New Zealand</a>
+                                                    <a href="#" class="dropdown-item">United Kingdom</a>
+                                                    <a href="#" class="dropdown-item">USA</a>
+                                                </div>
+                                            </div>
+                                            <div class="dropdown my-2">
+                                                <button class="btn btn-outline-light sorting w-sm w-auto-xs text-align-auto" data-toggle="dropdown"><span>All genres</span></button>
+                                                <div class="dropdown-menu dropdown-menu-right scrollable hover" id="filter-category" style="max-height: 310px">
+                                                    <a href="#" class="dropdown-item">
+                                                        All genres
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        Acoustic
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        Ambient
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        Blues
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        Classical
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        Country
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        Electronic
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        Emo
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        Folk
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        Hardcore
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        Hip-Hop
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        Indie
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        Jazz
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        Latin
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        Metal
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        Pop
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        Pop punk
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        Punk
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        Reggae
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        R&B
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        Rock
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        Soul
+                                                    </a>
+                                                    <a href="#" class="dropdown-item">
+                                                        World
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row list list-row list-index hide">
+                                        <div class="col-12" data-id="427101360" data-category="Pop" data-tag="USA" data-source="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview128/v4/03/78/b5/0378b505-0651-5d37-abaf-fdace32fa0a1/mzaf_4885861497912518049.plus.aac.p.m4a">
+                                            <div class="list-item r">
+                                                <div class="media ">
+                                                    <a href="item.detail.html#427101360" class="ajax media-content " style="background-image:url(../assets/img/c0.jpg)">
+                                                    </a>
+                                                    <div class="media-action media-action-overlay">
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row" data-toggle-class>
+                                                            <i data-feather="heart" class="active-fill"></i>
+                                                        </button>
+                                                        <button class="btn btn-raised btn-icon btn-rounded bg--white btn-play"></button>
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="list-content text-center">
+                                                    <div class="list-body ">
+                                                        <a href="item.detail.html#427101360" class="list-title title ajax h-1x">
+                                                            Shallow
+                                                        </a>
+                                                        <a href="artist.detail.html#427101360" class="list-subtitle d-block text-muted h-1x subtitle ajax ">
+                                                            Lady Gaga &amp; Bradley Cooper
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="list-action  show-row">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="px-3 text-sm text-muted d-none d-md-block num">540</div>
+                                                        <button class="btn btn-icon no-bg no-shadow" data-toggle-class>
+                                                            <i data-feather="heart" class="active-primary"></i>
+                                                        </button>
+                                                        <button class="btn btn-icon no-bg no-shadow btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12" data-id="440557235" data-category="Dance" data-tag="France" data-source="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview128/v4/07/2c/59/072c59fe-549d-bd0e-f93d-3e4a1f673af5/mzaf_4035597378145374075.plus.aac.p.m4a">
+                                            <div class="list-item r">
+                                                <div class="media ">
+                                                    <a href="item.detail.html#440557235" class="ajax media-content " style="background-image:url(../assets/img/c1.jpg)">
+                                                    </a>
+                                                    <div class="media-action media-action-overlay">
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row" data-toggle-class>
+                                                            <i data-feather="heart" class="active-fill"></i>
+                                                        </button>
+                                                        <button class="btn btn-raised btn-icon btn-rounded bg--white btn-play"></button>
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="list-content text-center">
+                                                    <div class="list-body ">
+                                                        <a href="item.detail.html#440557235" class="list-title title ajax h-1x">
+                                                            Taki Taki
+                                                        </a>
+                                                        <a href="artist.detail.html#440557235" class="list-subtitle d-block text-muted h-1x subtitle ajax ">
+                                                            DJ Snake Feat. Selena Gomez &amp; Ozuna &amp; Cardi B
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="list-action  show-row">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="px-3 text-sm text-muted d-none d-md-block num">806</div>
+                                                        <button class="btn btn-icon no-bg no-shadow" data-toggle-class>
+                                                            <i data-feather="heart" class="active-primary"></i>
+                                                        </button>
+                                                        <button class="btn btn-icon no-bg no-shadow btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12" data-id="435950080" data-category="Dance" data-tag="United Kingdom" data-source="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview128/v4/bd/28/a1/bd28a103-b17f-540a-eae3-9bfe992e2562/mzaf_6343854158099733867.plus.aac.p.m4a">
+                                            <div class="list-item r">
+                                                <div class="media ">
+                                                    <a href="item.detail.html#435950080" class="ajax media-content " style="background-image:url(../assets/img/c2.jpg)">
+                                                    </a>
+                                                    <div class="media-action media-action-overlay">
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row" data-toggle-class>
+                                                            <i data-feather="heart" class="active-fill"></i>
+                                                        </button>
+                                                        <button class="btn btn-raised btn-icon btn-rounded bg--white btn-play"></button>
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="list-content text-center">
+                                                    <div class="list-body ">
+                                                        <a href="item.detail.html#435950080" class="list-title title ajax h-1x">
+                                                            Promises
+                                                        </a>
+                                                        <a href="artist.detail.html#435950080" class="list-subtitle d-block text-muted h-1x subtitle ajax ">
+                                                            Calvin Harris &amp; Sam Smith
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="list-action  show-row">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="px-3 text-sm text-muted d-none d-md-block num">899</div>
+                                                        <button class="btn btn-icon no-bg no-shadow" data-toggle-class>
+                                                            <i data-feather="heart" class="active-primary"></i>
+                                                        </button>
+                                                        <button class="btn btn-icon no-bg no-shadow btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12" data-id="428550515" data-category="RAP" data-tag="Australia" data-source="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview115/v4/4c/58/f4/4c58f4f0-ec84-c5e3-15ed-39beb0933e38/mzaf_3604425775820894823.plus.aac.p.m4a">
+                                            <div class="list-item r">
+                                                <div class="media ">
+                                                    <a href="item.detail.html#428550515" class="ajax media-content " style="background-image:url(../assets/img/c3.jpg)">
+                                                    </a>
+                                                    <div class="media-action media-action-overlay">
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row" data-toggle-class>
+                                                            <i data-feather="heart" class="active-fill"></i>
+                                                        </button>
+                                                        <button class="btn btn-raised btn-icon btn-rounded bg--white btn-play"></button>
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="list-content text-center">
+                                                    <div class="list-body ">
+                                                        <a href="item.detail.html#428550515" class="list-title title ajax h-1x">
+                                                            Be Alright
+                                                        </a>
+                                                        <a href="artist.detail.html#428550515" class="list-subtitle d-block text-muted h-1x subtitle ajax ">
+                                                            Dean Lewis
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="list-action  show-row">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="px-3 text-sm text-muted d-none d-md-block num">414</div>
+                                                        <button class="btn btn-icon no-bg no-shadow" data-toggle-class>
+                                                            <i data-feather="heart" class="active-primary"></i>
+                                                        </button>
+                                                        <button class="btn btn-icon no-bg no-shadow btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12" data-id="383727904" data-category="Dance" data-tag="Italy" data-source="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview125/v4/91/65/e8/9165e84a-49ed-1728-54b4-32360df0eeea/mzaf_7952964905769903156.plus.aac.p.m4a">
+                                            <div class="list-item r">
+                                                <div class="media ">
+                                                    <a href="item.detail.html#383727904" class="ajax media-content " style="background-image:url(../assets/img/c4.jpg)">
+                                                    </a>
+                                                    <div class="media-action media-action-overlay">
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row" data-toggle-class>
+                                                            <i data-feather="heart" class="active-fill"></i>
+                                                        </button>
+                                                        <button class="btn btn-raised btn-icon btn-rounded bg--white btn-play"></button>
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="list-content text-center">
+                                                    <div class="list-body ">
+                                                        <a href="item.detail.html#383727904" class="list-title title ajax h-1x">
+                                                            In My Mind
+                                                        </a>
+                                                        <a href="artist.detail.html#383727904" class="list-subtitle d-block text-muted h-1x subtitle ajax ">
+                                                            Dynoro &amp; Gigi D’Agostino
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="list-action  show-row">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="px-3 text-sm text-muted d-none d-md-block num">298</div>
+                                                        <button class="btn btn-icon no-bg no-shadow" data-toggle-class>
+                                                            <i data-feather="heart" class="active-primary"></i>
+                                                        </button>
+                                                        <button class="btn btn-icon no-bg no-shadow btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12" data-id="441990739" data-category="Other" data-tag="USA" data-source="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview118/v4/fa/cc/a3/facca3ab-51ea-11b8-e359-b2a200738fc5/mzaf_2669843299284584791.plus.aac.p.m4a">
+                                            <div class="list-item r">
+                                                <div class="media ">
+                                                    <a href="item.detail.html#441990739" class="ajax media-content " style="background-image:url(../assets/img/c5.jpg)">
+                                                    </a>
+                                                    <div class="media-action media-action-overlay">
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row" data-toggle-class>
+                                                            <i data-feather="heart" class="active-fill"></i>
+                                                        </button>
+                                                        <button class="btn btn-raised btn-icon btn-rounded bg--white btn-play"></button>
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="list-content text-center">
+                                                    <div class="list-body ">
+                                                        <a href="item.detail.html#441990739" class="list-title title ajax h-1x">
+                                                            Without Me
+                                                        </a>
+                                                        <a href="artist.detail.html#441990739" class="list-subtitle d-block text-muted h-1x subtitle ajax ">
+                                                            Halsey
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="list-action  show-row">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="px-3 text-sm text-muted d-none d-md-block num">598</div>
+                                                        <button class="btn btn-icon no-bg no-shadow" data-toggle-class>
+                                                            <i data-feather="heart" class="active-primary"></i>
+                                                        </button>
+                                                        <button class="btn btn-icon no-bg no-shadow btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12" data-id="430776855" data-category="other" data-tag="USA" data-source="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview128/v4/bb/45/0e/bb450e27-beb6-6006-3add-b01a40cad68d/mzaf_4073501669713213306.plus.aac.p.m4a">
+                                            <div class="list-item r">
+                                                <div class="media ">
+                                                    <a href="item.detail.html#430776855" class="ajax media-content " style="background-image:url(../assets/img/c6.jpg)">
+                                                    </a>
+                                                    <div class="media-action media-action-overlay">
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row" data-toggle-class>
+                                                            <i data-feather="heart" class="active-fill"></i>
+                                                        </button>
+                                                        <button class="btn btn-raised btn-icon btn-rounded bg--white btn-play"></button>
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="list-content text-center">
+                                                    <div class="list-body ">
+                                                        <a href="item.detail.html#430776855" class="list-title title ajax h-1x">
+                                                            Natural
+                                                        </a>
+                                                        <a href="artist.detail.html#430776855" class="list-subtitle d-block text-muted h-1x subtitle ajax ">
+                                                            Imagine Dragons
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="list-action  show-row">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="px-3 text-sm text-muted d-none d-md-block num">722</div>
+                                                        <button class="btn btn-icon no-bg no-shadow" data-toggle-class>
+                                                            <i data-feather="heart" class="active-primary"></i>
+                                                        </button>
+                                                        <button class="btn btn-icon no-bg no-shadow btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12" data-id="418888835" data-category="other" data-tag="USA" data-source="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview128/v4/eb/e4/2e/ebe42efd-bbce-75cd-63a2-5813637e25bb/mzaf_6529454398103897146.plus.aac.p.m4a">
+                                            <div class="list-item r">
+                                                <div class="media ">
+                                                    <a href="item.detail.html#418888835" class="ajax media-content " style="background-image:url(../assets/img/c7.jpg)">
+                                                    </a>
+                                                    <div class="media-action media-action-overlay">
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row" data-toggle-class>
+                                                            <i data-feather="heart" class="active-fill"></i>
+                                                        </button>
+                                                        <button class="btn btn-raised btn-icon btn-rounded bg--white btn-play"></button>
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="list-content text-center">
+                                                    <div class="list-body ">
+                                                        <a href="item.detail.html#418888835" class="list-title title ajax h-1x">
+                                                            High Hopes
+                                                        </a>
+                                                        <a href="artist.detail.html#418888835" class="list-subtitle d-block text-muted h-1x subtitle ajax ">
+                                                            Panic! At The Disco
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="list-action  show-row">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="px-3 text-sm text-muted d-none d-md-block num">858</div>
+                                                        <button class="btn btn-icon no-bg no-shadow" data-toggle-class>
+                                                            <i data-feather="heart" class="active-primary"></i>
+                                                        </button>
+                                                        <button class="btn btn-icon no-bg no-shadow btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12" data-id="435160184" data-category="Dance" data-tag="USA" data-source="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview118/v4/9c/e6/fd/9ce6fd38-1225-6ac3-f7a6-da80cb50346e/mzaf_1582186890349153418.plus.aac.p.m4a">
+                                            <div class="list-item r">
+                                                <div class="media ">
+                                                    <a href="item.detail.html#435160184" class="ajax media-content " style="background-image:url(../assets/img/c8.jpg)">
+                                                    </a>
+                                                    <div class="media-action media-action-overlay">
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row" data-toggle-class>
+                                                            <i data-feather="heart" class="active-fill"></i>
+                                                        </button>
+                                                        <button class="btn btn-raised btn-icon btn-rounded bg--white btn-play"></button>
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="list-content text-center">
+                                                    <div class="list-body ">
+                                                        <a href="item.detail.html#435160184" class="list-title title ajax h-1x">
+                                                            Happier
+                                                        </a>
+                                                        <a href="artist.detail.html#435160184" class="list-subtitle d-block text-muted h-1x subtitle ajax ">
+                                                            Marshmello &amp; Bastille
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="list-action  show-row">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="px-3 text-sm text-muted d-none d-md-block num">767</div>
+                                                        <button class="btn btn-icon no-bg no-shadow" data-toggle-class>
+                                                            <i data-feather="heart" class="active-primary"></i>
+                                                        </button>
+                                                        <button class="btn btn-icon no-bg no-shadow btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12" data-id="434628736" data-category="Pop" data-tag="USA" data-source="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview128/v4/1d/44/74/1d447462-1811-5cfd-90f7-13edea1193d9/mzaf_5901924055590298818.plus.aac.p.m4a">
+                                            <div class="list-item r">
+                                                <div class="media ">
+                                                    <a href="item.detail.html#434628736" class="ajax media-content " style="background-image:url(../assets/img/c9.jpg)">
+                                                    </a>
+                                                    <div class="media-action media-action-overlay">
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row" data-toggle-class>
+                                                            <i data-feather="heart" class="active-fill"></i>
+                                                        </button>
+                                                        <button class="btn btn-raised btn-icon btn-rounded bg--white btn-play"></button>
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="list-content text-center">
+                                                    <div class="list-body ">
+                                                        <a href="item.detail.html#434628736" class="list-title title ajax h-1x">
+                                                            Thunderclouds
+                                                        </a>
+                                                        <a href="artist.detail.html#434628736" class="list-subtitle d-block text-muted h-1x subtitle ajax ">
+                                                            LSD Feat. Sia &amp; Diplo &amp; Labrinth
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="list-action  show-row">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="px-3 text-sm text-muted d-none d-md-block num">824</div>
+                                                        <button class="btn btn-icon no-bg no-shadow" data-toggle-class>
+                                                            <i data-feather="heart" class="active-primary"></i>
+                                                        </button>
+                                                        <button class="btn btn-icon no-bg no-shadow btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12" data-id="417333490" data-category="Pop" data-tag="USA" data-source="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview125/v4/27/a0/69/27a0692a-0205-87f2-1fbf-eec75a5dc94d/mzaf_8399436585982263723.plus.aac.p.m4a">
+                                            <div class="list-item r">
+                                                <div class="media ">
+                                                    <a href="item.detail.html#417333490" class="ajax media-content " style="background-image:url(../assets/img/c10.jpg)">
+                                                    </a>
+                                                    <div class="media-action media-action-overlay">
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row" data-toggle-class>
+                                                            <i data-feather="heart" class="active-fill"></i>
+                                                        </button>
+                                                        <button class="btn btn-raised btn-icon btn-rounded bg--white btn-play"></button>
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="list-content text-center">
+                                                    <div class="list-body ">
+                                                        <a href="item.detail.html#417333490" class="list-title title ajax h-1x">
+                                                            Girls Like You
+                                                        </a>
+                                                        <a href="artist.detail.html#417333490" class="list-subtitle d-block text-muted h-1x subtitle ajax ">
+                                                            Maroon 5 Feat. Cardi B
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="list-action  show-row">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="px-3 text-sm text-muted d-none d-md-block num">450</div>
+                                                        <button class="btn btn-icon no-bg no-shadow" data-toggle-class>
+                                                            <i data-feather="heart" class="active-primary"></i>
+                                                        </button>
+                                                        <button class="btn btn-icon no-bg no-shadow btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12" data-id="416737862" data-category="Latin" data-tag="all" data-source="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview128/v4/54/29/c1/5429c111-92a4-a647-6e85-0577343fbf45/mzaf_5955739319318374110.plus.aac.p.m4a">
+                                            <div class="list-item r">
+                                                <div class="media ">
+                                                    <a href="item.detail.html#416737862" class="ajax media-content " style="background-image:url(../assets/img/c11.jpg)">
+                                                    </a>
+                                                    <div class="media-action media-action-overlay">
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row" data-toggle-class>
+                                                            <i data-feather="heart" class="active-fill"></i>
+                                                        </button>
+                                                        <button class="btn btn-raised btn-icon btn-rounded bg--white btn-play"></button>
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="list-content text-center">
+                                                    <div class="list-body ">
+                                                        <a href="item.detail.html#416737862" class="list-title title ajax h-1x">
+                                                            MIA
+                                                        </a>
+                                                        <a href="artist.detail.html#416737862" class="list-subtitle d-block text-muted h-1x subtitle ajax ">
+                                                            Bad Bunny Feat. Drake
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="list-action  show-row">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="px-3 text-sm text-muted d-none d-md-block num">300</div>
+                                                        <button class="btn btn-icon no-bg no-shadow" data-toggle-class>
+                                                            <i data-feather="heart" class="active-primary"></i>
+                                                        </button>
+                                                        <button class="btn btn-icon no-bg no-shadow btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12" data-id="442173657" data-category="Rap" data-tag="USA" data-source="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview118/v4/11/72/7e/11727eb5-b6c6-f80f-ddd9-2fb9135c07b1/mzaf_3150787160306402060.plus.aac.p.m4a">
+                                            <div class="list-item r">
+                                                <div class="media ">
+                                                    <a href="item.detail.html#442173657" class="ajax media-content " style="background-image:url(../assets/img/c12.jpg)">
+                                                    </a>
+                                                    <div class="media-action media-action-overlay">
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row" data-toggle-class>
+                                                            <i data-feather="heart" class="active-fill"></i>
+                                                        </button>
+                                                        <button class="btn btn-raised btn-icon btn-rounded bg--white btn-play"></button>
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="list-content text-center">
+                                                    <div class="list-body ">
+                                                        <a href="item.detail.html#442173657" class="list-title title ajax h-1x">
+                                                            Sunflower (Spider-Man: Into the Spider-Verse)
+                                                        </a>
+                                                        <a href="artist.detail.html#442173657" class="list-subtitle d-block text-muted h-1x subtitle ajax ">
+                                                            Post Malone &amp; Swae Lee
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="list-action  show-row">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="px-3 text-sm text-muted d-none d-md-block num">356</div>
+                                                        <button class="btn btn-icon no-bg no-shadow" data-toggle-class>
+                                                            <i data-feather="heart" class="active-primary"></i>
+                                                        </button>
+                                                        <button class="btn btn-icon no-bg no-shadow btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12" data-id="434202110" data-category="Hip-Hop" data-tag="USA" data-source="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview128/v4/95/83/ee/9583ee9b-68bb-7e91-c032-1f8805157854/mzaf_896336562892407790.plus.aac.p.m4a">
+                                            <div class="list-item r">
+                                                <div class="media ">
+                                                    <a href="item.detail.html#434202110" class="ajax media-content " style="background-image:url(../assets/img/c13.jpg)">
+                                                    </a>
+                                                    <div class="media-action media-action-overlay">
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row" data-toggle-class>
+                                                            <i data-feather="heart" class="active-fill"></i>
+                                                        </button>
+                                                        <button class="btn btn-raised btn-icon btn-rounded bg--white btn-play"></button>
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="list-content text-center">
+                                                    <div class="list-body ">
+                                                        <a href="item.detail.html#434202110" class="list-title title ajax h-1x">
+                                                            SICKO MODE
+                                                        </a>
+                                                        <a href="artist.detail.html#434202110" class="list-subtitle d-block text-muted h-1x subtitle ajax ">
+                                                            Travis Scott
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="list-action  show-row">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="px-3 text-sm text-muted d-none d-md-block num">133</div>
+                                                        <button class="btn btn-icon no-bg no-shadow" data-toggle-class>
+                                                            <i data-feather="heart" class="active-primary"></i>
+                                                        </button>
+                                                        <button class="btn btn-icon no-bg no-shadow btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12" data-id="429946780" data-category="Pop" data-tag="USA" data-source="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview125/v4/53/85/65/538565bd-5529-4d94-c5b0-5030ad266024/mzaf_72019562509153648.plus.aac.p.m4a">
+                                            <div class="list-item r">
+                                                <div class="media ">
+                                                    <a href="item.detail.html#429946780" class="ajax media-content " style="background-image:url(../assets/img/c14.jpg)">
+                                                    </a>
+                                                    <div class="media-action media-action-overlay">
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row" data-toggle-class>
+                                                            <i data-feather="heart" class="active-fill"></i>
+                                                        </button>
+                                                        <button class="btn btn-raised btn-icon btn-rounded bg--white btn-play"></button>
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="list-content text-center">
+                                                    <div class="list-body ">
+                                                        <a href="item.detail.html#429946780" class="list-title title ajax h-1x">
+                                                            Eastside
+                                                        </a>
+                                                        <a href="artist.detail.html#429946780" class="list-subtitle d-block text-muted h-1x subtitle ajax ">
+                                                            Benny Blanco, Halsey &amp; Khalid
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="list-action  show-row">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="px-3 text-sm text-muted d-none d-md-block num">266</div>
+                                                        <button class="btn btn-icon no-bg no-shadow" data-toggle-class>
+                                                            <i data-feather="heart" class="active-primary"></i>
+                                                        </button>
+                                                        <button class="btn btn-icon no-bg no-shadow btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12" data-id="402107013" data-category="Dance" data-tag="All" data-source="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview118/v4/03/e5/25/03e52558-25b4-e41a-8b0a-c5ee14cf51de/mzaf_7464768196891763269.plus.aac.p.m4a">
+                                            <div class="list-item r">
+                                                <div class="media ">
+                                                    <a href="item.detail.html#402107013" class="ajax media-content " style="background-image:url(../assets/img/c15.jpg)">
+                                                    </a>
+                                                    <div class="media-action media-action-overlay">
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row" data-toggle-class>
+                                                            <i data-feather="heart" class="active-fill"></i>
+                                                        </button>
+                                                        <button class="btn btn-raised btn-icon btn-rounded bg--white btn-play"></button>
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="list-content text-center">
+                                                    <div class="list-body ">
+                                                        <a href="item.detail.html#402107013" class="list-title title ajax h-1x">
+                                                            Later Bitches
+                                                        </a>
+                                                        <a href="artist.detail.html#402107013" class="list-subtitle d-block text-muted h-1x subtitle ajax ">
+                                                            The Prince Karma
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="list-action  show-row">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="px-3 text-sm text-muted d-none d-md-block num">187</div>
+                                                        <button class="btn btn-icon no-bg no-shadow" data-toggle-class>
+                                                            <i data-feather="heart" class="active-primary"></i>
+                                                        </button>
+                                                        <button class="btn btn-icon no-bg no-shadow btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12" data-id="443321905" data-category="Rap" data-tag="USA" data-source="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview118/v4/aa/41/38/aa413803-5b2d-a5de-381f-351d5ebcc3cb/mzaf_2919139327828656331.plus.aac.p.m4a">
+                                            <div class="list-item r">
+                                                <div class="media ">
+                                                    <a href="item.detail.html#443321905" class="ajax media-content " style="background-image:url(../assets/img/c16.jpg)">
+                                                    </a>
+                                                    <div class="media-action media-action-overlay">
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row" data-toggle-class>
+                                                            <i data-feather="heart" class="active-fill"></i>
+                                                        </button>
+                                                        <button class="btn btn-raised btn-icon btn-rounded bg--white btn-play"></button>
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="list-content text-center">
+                                                    <div class="list-body ">
+                                                        <a href="item.detail.html#443321905" class="list-title title ajax h-1x">
+                                                            ZEZE
+                                                        </a>
+                                                        <a href="artist.detail.html#443321905" class="list-subtitle d-block text-muted h-1x subtitle ajax ">
+                                                            Kodak Black Feat. Offset &amp; Travis Scott
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="list-action  show-row">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="px-3 text-sm text-muted d-none d-md-block num">303</div>
+                                                        <button class="btn btn-icon no-bg no-shadow" data-toggle-class>
+                                                            <i data-feather="heart" class="active-primary"></i>
+                                                        </button>
+                                                        <button class="btn btn-icon no-bg no-shadow btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12" data-id="413103901" data-category="Pop" data-tag="Australia" data-source="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview118/v4/a7/34/5a/a7345af4-5d3c-3736-5dd0-e9d051b0ded3/mzaf_6009557953366571039.plus.aac.p.m4a">
+                                            <div class="list-item r">
+                                                <div class="media ">
+                                                    <a href="item.detail.html#413103901" class="ajax media-content " style="background-image:url(../assets/img/c17.jpg)">
+                                                    </a>
+                                                    <div class="media-action media-action-overlay">
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row" data-toggle-class>
+                                                            <i data-feather="heart" class="active-fill"></i>
+                                                        </button>
+                                                        <button class="btn btn-raised btn-icon btn-rounded bg--white btn-play"></button>
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="list-content text-center">
+                                                    <div class="list-body ">
+                                                        <a href="item.detail.html#413103901" class="list-title title ajax h-1x">
+                                                            Youngblood
+                                                        </a>
+                                                        <a href="artist.detail.html#413103901" class="list-subtitle d-block text-muted h-1x subtitle ajax ">
+                                                            5 Seconds Of Summer
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="list-action  show-row">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="px-3 text-sm text-muted d-none d-md-block num">237</div>
+                                                        <button class="btn btn-icon no-bg no-shadow" data-toggle-class>
+                                                            <i data-feather="heart" class="active-primary"></i>
+                                                        </button>
+                                                        <button class="btn btn-icon no-bg no-shadow btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12" data-id="440180182" data-category="Pop" data-tag="Kosovo" data-source="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview128/v4/d0/94/1a/d0941aed-432a-7b25-44fb-6e16c58cbc86/mzaf_2496381949757242114.plus.aac.p.m4a">
+                                            <div class="list-item r">
+                                                <div class="media ">
+                                                    <a href="item.detail.html#440180182" class="ajax media-content " style="background-image:url(../assets/img/c18.jpg)">
+                                                    </a>
+                                                    <div class="media-action media-action-overlay">
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row" data-toggle-class>
+                                                            <i data-feather="heart" class="active-fill"></i>
+                                                        </button>
+                                                        <button class="btn btn-raised btn-icon btn-rounded bg--white btn-play"></button>
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="list-content text-center">
+                                                    <div class="list-body ">
+                                                        <a href="item.detail.html#440180182" class="list-title title ajax h-1x">
+                                                            Let You Love Me
+                                                        </a>
+                                                        <a href="artist.detail.html#440180182" class="list-subtitle d-block text-muted h-1x subtitle ajax ">
+                                                            Rita Ora
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="list-action  show-row">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="px-3 text-sm text-muted d-none d-md-block num">234</div>
+                                                        <button class="btn btn-icon no-bg no-shadow" data-toggle-class>
+                                                            <i data-feather="heart" class="active-primary"></i>
+                                                        </button>
+                                                        <button class="btn btn-icon no-bg no-shadow btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12" data-id="442009655" data-category="Pop" data-tag="England" data-source="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview128/v4/07/7e/24/077e2447-0d02-1c40-729b-a4a87e7ecd51/mzaf_3261492558713394996.plus.aac.p.m4a">
+                                            <div class="list-item r">
+                                                <div class="media ">
+                                                    <a href="item.detail.html#442009655" class="ajax media-content " style="background-image:url(../assets/img/c19.jpg)">
+                                                    </a>
+                                                    <div class="media-action media-action-overlay">
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row" data-toggle-class>
+                                                            <i data-feather="heart" class="active-fill"></i>
+                                                        </button>
+                                                        <button class="btn btn-raised btn-icon btn-rounded bg--white btn-play"></button>
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="list-content text-center">
+                                                    <div class="list-body ">
+                                                        <a href="item.detail.html#442009655" class="list-title title ajax h-1x">
+                                                            Woman Like Me
+                                                        </a>
+                                                        <a href="artist.detail.html#442009655" class="list-subtitle d-block text-muted h-1x subtitle ajax ">
+                                                            Little Mix Feat. Nicki Minaj
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="list-action  show-row">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="px-3 text-sm text-muted d-none d-md-block num">404</div>
+                                                        <button class="btn btn-icon no-bg no-shadow" data-toggle-class>
+                                                            <i data-feather="heart" class="active-primary"></i>
+                                                        </button>
+                                                        <button class="btn btn-icon no-bg no-shadow btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12" data-id="378918899" data-category="Dance" data-tag="Canada" data-source="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview118/v4/c3/6c/db/c36cdbd0-304b-11b0-128d-eda635333cc8/mzaf_1033589088272334209.plus.aac.p.m4a">
+                                            <div class="list-item r">
+                                                <div class="media ">
+                                                    <a href="item.detail.html#378918899" class="ajax media-content " style="background-image:url(../assets/img/c20.jpg)">
+                                                    </a>
+                                                    <div class="media-action media-action-overlay">
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row" data-toggle-class>
+                                                            <i data-feather="heart" class="active-fill"></i>
+                                                        </button>
+                                                        <button class="btn btn-raised btn-icon btn-rounded bg--white btn-play"></button>
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="list-content text-center">
+                                                    <div class="list-body ">
+                                                        <a href="item.detail.html#378918899" class="list-title title ajax h-1x">
+                                                            Body
+                                                        </a>
+                                                        <a href="artist.detail.html#378918899" class="list-subtitle d-block text-muted h-1x subtitle ajax ">
+                                                            Loud Luxury Feat. Brando
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="list-action  show-row">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="px-3 text-sm text-muted d-none d-md-block num">509</div>
+                                                        <button class="btn btn-icon no-bg no-shadow" data-toggle-class>
+                                                            <i data-feather="heart" class="active-primary"></i>
+                                                        </button>
+                                                        <button class="btn btn-icon no-bg no-shadow btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12" data-id="439575216" data-category="Rap" data-tag="USA" data-source="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview118/v4/8f/84/bd/8f84bd09-94d3-d6f1-5fca-4b61d7ba135a/mzaf_69877628019454373.plus.aac.p.m4a">
+                                            <div class="list-item r">
+                                                <div class="media ">
+                                                    <a href="item.detail.html#439575216" class="ajax media-content " style="background-image:url(../assets/img/c21.jpg)">
+                                                    </a>
+                                                    <div class="media-action media-action-overlay">
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row" data-toggle-class>
+                                                            <i data-feather="heart" class="active-fill"></i>
+                                                        </button>
+                                                        <button class="btn btn-raised btn-icon btn-rounded bg--white btn-play"></button>
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="list-content text-center">
+                                                    <div class="list-body ">
+                                                        <a href="item.detail.html#439575216" class="list-title title ajax h-1x">
+                                                            Wake Up In The Sky
+                                                        </a>
+                                                        <a href="artist.detail.html#439575216" class="list-subtitle d-block text-muted h-1x subtitle ajax ">
+                                                            Gucci Mane, Bruno Mars &amp; Kodak Black
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="list-action  show-row">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="px-3 text-sm text-muted d-none d-md-block num">490</div>
+                                                        <button class="btn btn-icon no-bg no-shadow" data-toggle-class>
+                                                            <i data-feather="heart" class="active-primary"></i>
+                                                        </button>
+                                                        <button class="btn btn-icon no-bg no-shadow btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12" data-id="374705210" data-category="Rap" data-tag="USA" data-source="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview118/v4/dc/c4/0b/dcc40b4d-283b-e9a2-6209-ca988087cc0e/mzaf_8137717147287964110.plus.aac.p.m4a">
+                                            <div class="list-item r">
+                                                <div class="media ">
+                                                    <a href="item.detail.html#374705210" class="ajax media-content " style="background-image:url(../assets/img/c22.jpg)">
+                                                    </a>
+                                                    <div class="media-action media-action-overlay">
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row" data-toggle-class>
+                                                            <i data-feather="heart" class="active-fill"></i>
+                                                        </button>
+                                                        <button class="btn btn-raised btn-icon btn-rounded bg--white btn-play"></button>
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="list-content text-center">
+                                                    <div class="list-body ">
+                                                        <a href="item.detail.html#374705210" class="list-title title ajax h-1x">
+                                                            Mo Bamba
+                                                        </a>
+                                                        <a href="artist.detail.html#374705210" class="list-subtitle d-block text-muted h-1x subtitle ajax ">
+                                                            Sheck Wes
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="list-action  show-row">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="px-3 text-sm text-muted d-none d-md-block num">888</div>
+                                                        <button class="btn btn-icon no-bg no-shadow" data-toggle-class>
+                                                            <i data-feather="heart" class="active-primary"></i>
+                                                        </button>
+                                                        <button class="btn btn-icon no-bg no-shadow btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12" data-id="438654695" data-category="Dance" data-tag="France" data-source="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview128/v4/c1/60/68/c1606821-459e-0575-ad3b-6b291f2dbf66/mzaf_3521330005736623852.plus.aac.p.m4a">
+                                            <div class="list-item r">
+                                                <div class="media ">
+                                                    <a href="item.detail.html#438654695" class="ajax media-content " style="background-image:url(../assets/img/c23.jpg)">
+                                                    </a>
+                                                    <div class="media-action media-action-overlay">
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row" data-toggle-class>
+                                                            <i data-feather="heart" class="active-fill"></i>
+                                                        </button>
+                                                        <button class="btn btn-raised btn-icon btn-rounded bg--white btn-play"></button>
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="list-content text-center">
+                                                    <div class="list-body ">
+                                                        <a href="item.detail.html#438654695" class="list-title title ajax h-1x">
+                                                            Say My Name
+                                                        </a>
+                                                        <a href="artist.detail.html#438654695" class="list-subtitle d-block text-muted h-1x subtitle ajax ">
+                                                            David Guetta &amp; Bebe Rexha &amp; J Balvin
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="list-action  show-row">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="px-3 text-sm text-muted d-none d-md-block num">425</div>
+                                                        <button class="btn btn-icon no-bg no-shadow" data-toggle-class>
+                                                            <i data-feather="heart" class="active-primary"></i>
+                                                        </button>
+                                                        <button class="btn btn-icon no-bg no-shadow btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12" data-id="416888150" data-category="Dance" data-tag="England" data-source="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview118/v4/80/9c/c6/809cc6e9-c2e4-f300-921c-e37b5a4a6569/mzaf_4199798196739675159.plus.aac.p.m4a">
+                                            <div class="list-item r">
+                                                <div class="media ">
+                                                    <a href="item.detail.html#416888150" class="ajax media-content " style="background-image:url(../assets/img/c24.jpg)">
+                                                    </a>
+                                                    <div class="media-action media-action-overlay">
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row" data-toggle-class>
+                                                            <i data-feather="heart" class="active-fill"></i>
+                                                        </button>
+                                                        <button class="btn btn-raised btn-icon btn-rounded bg--white btn-play"></button>
+                                                        <button class="btn btn-icon no-bg no-shadow hide-row btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="list-content text-center">
+                                                    <div class="list-body ">
+                                                        <a href="item.detail.html#416888150" class="list-title title ajax h-1x">
+                                                            Solo
+                                                        </a>
+                                                        <a href="artist.detail.html#416888150" class="list-subtitle d-block text-muted h-1x subtitle ajax ">
+                                                            Clean Bandit Feat. Demi Lovato
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="list-action  show-row">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="px-3 text-sm text-muted d-none d-md-block num">669</div>
+                                                        <button class="btn btn-icon no-bg no-shadow" data-toggle-class>
+                                                            <i data-feather="heart" class="active-primary"></i>
+                                                        </button>
+                                                        <button class="btn btn-icon no-bg no-shadow btn-more" data-toggle="dropdown">
+                                                            <i data-feather="more-horizontal"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu dropdown-menu-right"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="no-result hide">
+                                        <div class="p-5 text-center">
+                                            <h5>Nothing Found</h5>
+                                            <small>It seems we can’t find what you’re looking for.</small>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex py-3 justify-content-center hide">
+                                        <ul class="pagination pagination-sm"></ul>
+                                    </div>
+                                </div>
+                                <div style="min-width: 4rem"></div>
+                                <div class="w-xl w-auto-sm no-shrink">
+                                    <div class="sticky">
+                                        <div class="list mb-5">
+                                            <div class="list-item list-overlay r">
+                                                <div class="media ">
+                                                    <a href="item.detail.html#" class="ajax media-content " style="background-image:url(../assets/img/b16.jpg)">
+                                                    </a>
+                                                    <div class="media-action ">
+                                                    </div>
+                                                </div>
+                                                <div class="list-content p-5 text-center">
+                                                    <div class="list-body ">
+                                                        <a href="item.detail.html#" class="list-title title ajax h3 font-weight-bold">
+                                                            Hip-Hop Chart 100
+                                                        </a>
+                                                        <a href="artist.detail.html#" class="list-subtitle d-block text-muted h-1x subtitle ajax ">
+                                                            The hottest rap right now.
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h6 class="text text-muted sr-item">Top tracks</h6>
+                                        <div class="row list-row">
+                                            <div class="col-12" data-id="438654695" data-category="Dance" data-tag="France" data-source="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview128/v4/c1/60/68/c1606821-459e-0575-ad3b-6b291f2dbf66/mzaf_3521330005736623852.plus.aac.p.m4a">
+                                                <div class="list-item r">
+                                                    <div class="media ">
+                                                        <a href="item.detail.html#438654695" class="ajax media-content " style="background-image:url(../assets/img/c23.jpg)">
+                                                        </a>
+                                                        <div class="media-action ">
+                                                            <button class="btn btn-icon no-bg no-shadow hide-row" data-toggle-class>
+                                                                <i data-feather="heart" class="active-fill"></i>
+                                                            </button>
+                                                            <button class="btn btn-raised btn-icon btn-rounded bg--white btn-play"></button>
+                                                            <button class="btn btn-icon no-bg no-shadow hide-row btn-more" data-toggle="dropdown">
+                                                                <i data-feather="more-horizontal"></i>
+                                                            </button>
+                                                            <div class="dropdown-menu dropdown-menu-right"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="list-content ">
+                                                        <div class="list-body ">
+                                                            <a href="item.detail.html#438654695" class="list-title title ajax h-1x">
+                                                                Say My Name
+                                                            </a>
+                                                            <a href="artist.detail.html#438654695" class="list-subtitle d-block text-muted h-1x subtitle ajax ">
+                                                                David Guetta &amp; Bebe Rexha &amp; J Balvin
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12" data-id="434179154" data-category="Rap" data-tag="USA" data-source="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview128/v4/85/3a/89/853a8999-a985-b66a-4d8d-a260ce744728/mzaf_5634253487407986103.plus.aac.p.m4a">
+                                                <div class="list-item r">
+                                                    <div class="media ">
+                                                        <a href="item.detail.html#434179154" class="ajax media-content " style="background-image:url(../assets/img/c31.jpg)">
+                                                        </a>
+                                                        <div class="media-action ">
+                                                            <button class="btn btn-icon no-bg no-shadow hide-row" data-toggle-class>
+                                                                <i data-feather="heart" class="active-fill"></i>
+                                                            </button>
+                                                            <button class="btn btn-raised btn-icon btn-rounded bg--white btn-play"></button>
+                                                            <button class="btn btn-icon no-bg no-shadow hide-row btn-more" data-toggle="dropdown">
+                                                                <i data-feather="more-horizontal"></i>
+                                                            </button>
+                                                            <div class="dropdown-menu dropdown-menu-right"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="list-content ">
+                                                        <div class="list-body ">
+                                                            <a href="item.detail.html#434179154" class="list-title title ajax h-1x">
+                                                                Arms Around You
+                                                            </a>
+                                                            <a href="artist.detail.html#434179154" class="list-subtitle d-block text-muted h-1x subtitle ajax ">
+                                                                XXXTENTACION &amp; Lil Pump Feat. Swae Lee &amp; Maluma
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12" data-id="416737862" data-category="Latin" data-tag="all" data-source="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview128/v4/54/29/c1/5429c111-92a4-a647-6e85-0577343fbf45/mzaf_5955739319318374110.plus.aac.p.m4a">
+                                                <div class="list-item r">
+                                                    <div class="media ">
+                                                        <a href="item.detail.html#416737862" class="ajax media-content " style="background-image:url(../assets/img/c11.jpg)">
+                                                        </a>
+                                                        <div class="media-action ">
+                                                            <button class="btn btn-icon no-bg no-shadow hide-row" data-toggle-class>
+                                                                <i data-feather="heart" class="active-fill"></i>
+                                                            </button>
+                                                            <button class="btn btn-raised btn-icon btn-rounded bg--white btn-play"></button>
+                                                            <button class="btn btn-icon no-bg no-shadow hide-row btn-more" data-toggle="dropdown">
+                                                                <i data-feather="more-horizontal"></i>
+                                                            </button>
+                                                            <div class="dropdown-menu dropdown-menu-right"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="list-content ">
+                                                        <div class="list-body ">
+                                                            <a href="item.detail.html#416737862" class="list-title title ajax h-1x">
+                                                                MIA
+                                                            </a>
+                                                            <a href="artist.detail.html#416737862" class="list-subtitle d-block text-muted h-1x subtitle ajax ">
+                                                                Bad Bunny Feat. Drake
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12" data-id="440557235" data-category="Dance" data-tag="France" data-source="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview128/v4/07/2c/59/072c59fe-549d-bd0e-f93d-3e4a1f673af5/mzaf_4035597378145374075.plus.aac.p.m4a">
+                                                <div class="list-item r">
+                                                    <div class="media ">
+                                                        <a href="item.detail.html#440557235" class="ajax media-content " style="background-image:url(../assets/img/c1.jpg)">
+                                                        </a>
+                                                        <div class="media-action ">
+                                                            <button class="btn btn-icon no-bg no-shadow hide-row" data-toggle-class>
+                                                                <i data-feather="heart" class="active-fill"></i>
+                                                            </button>
+                                                            <button class="btn btn-raised btn-icon btn-rounded bg--white btn-play"></button>
+                                                            <button class="btn btn-icon no-bg no-shadow hide-row btn-more" data-toggle="dropdown">
+                                                                <i data-feather="more-horizontal"></i>
+                                                            </button>
+                                                            <div class="dropdown-menu dropdown-menu-right"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="list-content ">
+                                                        <div class="list-body ">
+                                                            <a href="item.detail.html#440557235" class="list-title title ajax h-1x">
+                                                                Taki Taki
+                                                            </a>
+                                                            <a href="artist.detail.html#440557235" class="list-subtitle d-block text-muted h-1x subtitle ajax ">
+                                                                DJ Snake Feat. Selena Gomez &amp; Ozuna &amp; Cardi B
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12" data-id="418888835" data-category="other" data-tag="USA" data-source="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview128/v4/eb/e4/2e/ebe42efd-bbce-75cd-63a2-5813637e25bb/mzaf_6529454398103897146.plus.aac.p.m4a">
+                                                <div class="list-item r">
+                                                    <div class="media ">
+                                                        <a href="item.detail.html#418888835" class="ajax media-content " style="background-image:url(../assets/img/c7.jpg)">
+                                                        </a>
+                                                        <div class="media-action ">
+                                                            <button class="btn btn-icon no-bg no-shadow hide-row" data-toggle-class>
+                                                                <i data-feather="heart" class="active-fill"></i>
+                                                            </button>
+                                                            <button class="btn btn-raised btn-icon btn-rounded bg--white btn-play"></button>
+                                                            <button class="btn btn-icon no-bg no-shadow hide-row btn-more" data-toggle="dropdown">
+                                                                <i data-feather="more-horizontal"></i>
+                                                            </button>
+                                                            <div class="dropdown-menu dropdown-menu-right"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="list-content ">
+                                                        <div class="list-body ">
+                                                            <a href="item.detail.html#418888835" class="list-title title ajax h-1x">
+                                                                High Hopes
+                                                            </a>
+                                                            <a href="artist.detail.html#418888835" class="list-subtitle d-block text-muted h-1x subtitle ajax ">
+                                                                Panic! At The Disco
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12" data-id="416888150" data-category="Dance" data-tag="England" data-source="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview118/v4/80/9c/c6/809cc6e9-c2e4-f300-921c-e37b5a4a6569/mzaf_4199798196739675159.plus.aac.p.m4a">
+                                                <div class="list-item r">
+                                                    <div class="media ">
+                                                        <a href="item.detail.html#416888150" class="ajax media-content " style="background-image:url(../assets/img/c24.jpg)">
+                                                        </a>
+                                                        <div class="media-action ">
+                                                            <button class="btn btn-icon no-bg no-shadow hide-row" data-toggle-class>
+                                                                <i data-feather="heart" class="active-fill"></i>
+                                                            </button>
+                                                            <button class="btn btn-raised btn-icon btn-rounded bg--white btn-play"></button>
+                                                            <button class="btn btn-icon no-bg no-shadow hide-row btn-more" data-toggle="dropdown">
+                                                                <i data-feather="more-horizontal"></i>
+                                                            </button>
+                                                            <div class="dropdown-menu dropdown-menu-right"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="list-content ">
+                                                        <div class="list-body ">
+                                                            <a href="item.detail.html#416888150" class="list-title title ajax h-1x">
+                                                                Solo
+                                                            </a>
+                                                            <a href="artist.detail.html#416888150" class="list-subtitle d-block text-muted h-1x subtitle ajax ">
+                                                                Clean Bandit Feat. Demi Lovato
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ############ Main END-->
+            </div>
+            <!-- ############ Content END-->
+        </div>
+        <footer id="footer" class="page-footer ">
+            <div class="padding bg-dark  b-t">
+                <div class="page-container">
+                    <div class="py-5 text-inherit text-hover-primary">
+                        <div class="row mb-5">
+                            <div class="col-6 col-md-4">
+                                <div class="mb-3">
+                                    <!-- brand -->
+                                    <a href="index.html" class="navbar-brand text-white ">
+                                        <svg width="48" height="48" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
+                                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1" fill="#000"></circle>
+                                            <circle cx="12" cy="12" r="2" stroke="currentColor" stroke-width="1"></circle>
+                                            <g class="loading-spin" stroke="currentColor" stroke-width="1" style="transform-origin: 12px 12px">
+                                                <path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"></path>
+                                            </g>
+                                        </svg>
+                                        <!-- <img src="../assets/img/logo.png" alt="..."> -->
+                                        <span class="hidden-folded d-inline l-s-n-1x ">Bepop</span>
+                                    </a>
+                                    <!-- / brand -->
+                                </div>
+                                <div class="px-1">
+                                    <div class="dropdown mt-5 ml-md-5">
+                                        <button class="btn w-sm btn-dark text-align-auto b-a sorting" data-toggle="dropdown">English</button>
+                                        <div class="dropdown-menu">
+                                            <a href="#" class="dropdown-item">English</a>
+                                            <a href="#" class="dropdown-item">Français</a>
+                                            <a href="#" class="dropdown-item">日本语</a>
+                                            <a href="#" class="dropdown-item">中文</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <h5 class="mb-3 text-muted">Pages</h5>
+                                <ul class="list-unstyled l-h-2x text-highlight">
+                                    <li>
+                                        <a href="../html/artists.html">Artists</a>
+                                    </li>
+                                    <li>
+                                        <a href="../html/charts.html">Top Charts</a>
+                                    </li>
+                                    <li>
+                                        <a href="../html/genres.html">Genres</a>
+                                    </li>
+                                    <li>
+                                        <a href="../html/page.about.html">About Us</a>
+                                    </li>
+                                    <li>
+                                        <a href="../html/blog.html">Blog</a>
+                                    </li>
+                                    <li>
+                                        <a href="../html/signin.html">Signin</a>
+                                    </li>
+                                    <li>
+                                        <a href="../html/signup.html">Signup</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <h5 class="mb-3 text-muted">Your Bepop</h5>
+                                <ul class="list-unstyled l-h-2x text-highlight">
+                                    <li>
+                                        <a href="../html/artist.detail.html">Profile</a>
+                                    </li>
+                                    <li>
+                                        <a href="../html/artist.detail.html#albums">Albums</a>
+                                    </li>
+                                    <li>
+                                        <a href="../html/artist.detail.html#tracks">Tracks</a>
+                                    </li>
+                                    <li>
+                                        <a href="../html/artist.detail.html#playlist">Playlist</a>
+                                    </li>
+                                    <li>
+                                        <a href="../html/artist.detail.html#liked">Liked</a>
+                                    </li>
+                                    <li>
+                                        <a href="../html/artist.detail.html#following">Following</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <h5 class="mb-3 text-muted">Help</h5>
+                                <ul class="list-unstyled l-h-2x text-highlight">
+                                    <li>
+                                        <a href="../docs">Documentation</a>
+                                    </li>
+                                    <li>
+                                        <a href="../docs/changelog.html">Changelog</a>
+                                    </li>
+                                    <li>
+                                        <a href="../docs/changelog.html">Update</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-6 col-md-2 text-md-right">
+                                <h5 class="mb-3 text-muted">Follow Us</h5>
+                                <a href="#">Fb</a>
+                                <a href="#">Tw</a>
+                                <a href="#">Ig</a>
+                            </div>
+                        </div>
+                        <div class="text-center py-5">
+                            <span class="text-muted text-sm">&copy; Copyright. Bepop - Music Web Application, All rights reserved.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-plugin="plyr" class="plyrist plyrist_audio plyr-list-popup player bg-overlay b-t fixed-bottom" id="plyrist">
+                <audio controls hidden></audio>
+                <div class="plyr-list bg-dark-overlay" style="display:none">
+                </div>
+            </div>
+        </footer>
+        <!-- build:js ../assets/js/site.min.js -->
+        <!-- jQuery -->
+        <script src="../libs/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="../libs/popper.js/dist/umd/popper.min.js"></script>
+        <script src="../libs/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- ajax page -->
+        <script src="../libs/pjax/pjax.min.js"></script>
+        <script src="../assets/js/ajax.js"></script>
+        <!-- lazyload plugin -->
+        <script src="../assets/js/lazyload.config.js"></script>
+        <script src="../assets/js/lazyload.js"></script>
+        <script src="../assets/js/plugin.js"></script>
+        <!-- scrollreveal -->
+        <script src="../libs/scrollreveal/dist/scrollreveal.min.js"></script>
+        <script src="../libs/slick-carousel/slick/slick.min.js"></script>
+        <!-- feather icons -->
+        <script src="../libs/feather-icons/dist/feather.min.js"></script>
+        <!-- theme -->
+        <script src="../assets/js/theme.js"></script>
+        <!-- endbuild -->
+    </body>
+</html>

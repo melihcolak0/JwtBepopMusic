@@ -1,0 +1,57 @@
+﻿@model List<ResultSongDto>
+
+
+<div class="col-md-6">
+    <div class="heading pt-5 pb-3 d-flex ">
+        <div>
+            @* <div class="text-muted sr-item">User</div> *@
+            <h5 class="text-highlight sr-item">Son Eklenen Şarkılar</h5>
+        </div>
+        <span class="flex"></span>
+    </div>
+    <div class="row list-row list-index">
+        @foreach(var item in Model)
+        {
+            <div class="col-12" data-id="@item.Id" data-category="@item.Genre" data-tag="awd" data-source="@item.DataSourceUrl">
+                <div class="list-item r">
+                    <div class="media ">
+                        <a href="#" class="ajax media-content " style="background-image:url(@item.CoverImageUrl)">
+                        </a>
+                        <div class="media-action media-action-overlay">
+                            <button class="btn btn-icon no-bg no-shadow hide-row" data-toggle-class>
+                                <i data-feather="heart" class="active-fill"></i>
+                            </button>
+                            <button class="btn btn-raised btn-icon btn-rounded bg--white btn-play"></button>
+                            <button class="btn btn-icon no-bg no-shadow hide-row btn-more" data-toggle="dropdown">
+                                <i data-feather="more-horizontal"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right"></div>
+                        </div>
+                    </div>
+                    <div class="list-content text-center">
+                        <div class="list-body ">
+                            <a href="#" class="list-title title ajax h-1x">
+                                @item.Title
+                            </a>
+                            <a href="#" class="list-subtitle d-block text-muted h-1x subtitle ajax ">
+                                @item.Artist
+                            </a>
+                        </div>
+                    </div>
+                    <div class="list-action  show-row">
+                        <div class="d-flex align-items-center">
+                            <div class="px-3 text-sm text-muted d-none d-md-block">@(((TimeSpan)item.Duration).ToString(@"mm\:ss"))</div>
+                            <button class="btn btn-icon no-bg no-shadow" data-toggle-class>
+                                <i data-feather="heart" class="active-primary"></i>
+                            </button>
+                            <button class="btn btn-icon no-bg no-shadow btn-more" data-toggle="dropdown">
+                                <i data-feather="more-horizontal"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }        
+    </div>
+</div>

@@ -1,0 +1,68 @@
+/*
+Custom css
+*/
+
+.page-header{
+	color: #fff;
+	padding: 1rem;
+	background-color: rgba(0,0,0,0.65);
+	background: linear-gradient(0, transparent 5%, rgba(0,0,0,0.65));
+	transition: background 0.5s;
+}
+
+.page-header.scrolled{
+	background: rgba(0,0,0,0.85);
+}
+
+#content{
+	min-height: 100vh;
+}
+
+.page-hero{
+	padding: 8rem 0 4rem 0;
+}
+
+.page-hero .bg-media{
+	position: absolute;
+	z-index: 0;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	max-width: 100%;
+}
+
+.page-hero .bg-media:after{
+	padding-top: 50%;
+}
+
+.page-hero .bg-media .media-content{
+	
+}
+
+.bg-dark .page-hero .bg-media:before{
+	background: linear-gradient(0deg, #1a1b22 10%, transparent);
+}
+
+.page-hero .bg-media:before{
+	position: absolute;
+	z-index: 1;
+    width: 100%;
+    height: 100%;
+    content: "";
+	background: linear-gradient(0deg, #fff 10%, transparent 65%);
+}
+
+.page-hero .slick-dots{
+	position: absolute;
+	right: 0;
+	top: 50%;
+}
+.page-hero .slick-dots li{
+	display: block;
+}
+
+@media (max-width: 600px) {
+	.page-hero .bg-media:after{
+		padding-top: 100%;
+	}
+}

@@ -1,0 +1,36 @@
+﻿@model List<ResultSongDto>
+
+<h6 class="text text-muted sr-item">Popüler Parçalar</h6>
+<div class="row list-row">
+    @foreach (var item in Model.Take(5))
+    {
+        <div class="col-12" data-id="@item.Id" data-category="@item.Genre" data-tag="awd" data-source="@item.DataSourceUrl">
+            <div class="list-item r">
+                <div class="media ">
+                    <a href="#" class="ajax media-content " style="background-image:url(@item.CoverImageUrl)">
+                    </a>
+                    <div class="media-action ">
+                        <button class="btn btn-icon no-bg no-shadow hide-row" data-toggle-class>
+                            <i data-feather="heart" class="active-fill"></i>
+                        </button>
+                        <button class="btn btn-raised btn-icon btn-rounded bg--white btn-play"></button>
+                        <button class="btn btn-icon no-bg no-shadow hide-row btn-more" data-toggle="dropdown">
+                            <i data-feather="more-horizontal"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right"></div>
+                    </div>
+                </div>
+                <div class="list-content ">
+                    <div class="list-body ">
+                        <a href="#" class="list-title title ajax h-1x">
+                            @item.Title
+                        </a>
+                        <a href="#" class="list-subtitle d-block text-muted h-1x subtitle ajax ">
+                            @item.Artist
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

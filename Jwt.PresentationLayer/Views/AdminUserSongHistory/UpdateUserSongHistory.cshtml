@@ -1,0 +1,51 @@
+﻿@model UpdateUserSongHistoryDto
+
+@{
+    ViewData["Title"] = "UpdateUserSongHistory";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="row">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Kullanıcı - Şarkı Geçmişi Güncelleme</h4>
+                <p class="card-description"> Kullanıcı - Şarkı geçmişi güncelleme işlemini buradan gerçekleştirebilirsiniz. </p>
+                <form method="post" class="forms-sample">
+                    <input type="hidden" asp-for="Id">
+                    <div class="form-group">
+                        <label>Kullanıcı</label>
+                        <select asp-for="UserId" class="form-control">
+                            <option value="">-- Kullanıcı Seçiniz --</option>
+                            @foreach (var user in ViewBag.Users)
+                            {
+                                <option value="@user.Id">@user.NameSurname</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Şarkı</label>
+                        <select asp-for="SongId" class="form-control">
+                            <option value="">-- Şarkı Seçiniz --</option>
+                            @foreach (var song in ViewBag.Songs)
+                            {
+                                <option value="@song.Id">@song.Artist - @song.Title</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Dinlenme Sayısı</label>
+                        <input asp-for="ListenCount" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Son Dinlenme Tarihi</label>
+                        <input asp-for="LastListened" type="datetime-local" class="form-control" />
+                    </div>
+                    <button type="submit" class="btn btn-primary me-2">Güncelle</button>
+                    <a href="/AdminUserSongHistory/Index" class="btn btn-light">İptal Et</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
