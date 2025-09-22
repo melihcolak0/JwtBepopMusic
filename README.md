@@ -1,7 +1,7 @@
-# 🚗 ASP.NET Core 9.0 ve CQRS ile Cental Rent A Car Sitesi
-Bu repository, M&Y Yazılım Akademi bünyesinde yaptığım onuncu proje olan ASP.NET Core Web App ile Cental Rent A Car Sitesi projesini içermektedir. Bu eğitimde bana yol gösteren Murat Yücedağ'a çok teşekkür ederim.
+# 🎵 ASP.NET Core 6.0 ve JWT ile Bepop Müzik Uygulaması Sitesi
+Bu repository, M&Y Yazılım Akademi bünyesinde yaptığım on ikinci proje olan ASP.NET Core 6.0 ve JWT ile Bepop Müzik Uygulaması Sitesi projesini içermektedir. Bu eğitimde bana yol gösteren Murat Yücedağ'a çok teşekkür ederim.
 
-Bu proje, ASP.NET Core 9.0 ve CQRS (Command Query Responsibility Segregation) mimarisi kullanılarak geliştirilmiş modern bir araç kiralama destek ve öneri platformudur. Proje, tek katmanlı bir yapıda geliştirilmiş olsa da folder structure prensiplerine uygun bir dosya düzeni oluşturulmuş, böylece temiz kod, anlaşılabilirlik ve genişletilebilirlik sağlanmıştır.
+Bu proje, ASP.NET Core 6.0 ve JWT (JSON Web Token) Authentication kullanılarak geliştirilmiş modern müzik dinleme platformudur. Proje, toplamda 6 katmanlı bir yapıda geliştirilmiştir. Böylece temiz kod, anlaşılabilirlik ve genişletilebilirlik sağlanmıştır.
 
 Arka planda MS SQL Server üzerinde ilişkisel tablolar tasarlanmış ve Araçlar, Rezervasyonlar, Kullanıcılar gibi temel entity’ler için dinamik veri yapıları oluşturulmuştur. Bu sayede proje sadece bir demo değil, gerçek bir sektörel uygulamaya dönüştürülebilecek nitelikte güçlü bir temel kazanmıştır.
 
