@@ -5,6 +5,14 @@ Bu proje, ASP.NET Core 6.0 ve JWT (JSON Web Token) Authentication kullanılarak 
 
 Veri tabanı olarak Microsoft SQL Server üzerinde ilişkisel tablolar tasarlanmış ve Paketler, Şarkılar, Kullanıcılar ve Kullanıcı - Şarkı Geçmişi gibi temel entity’ler için dinamik veri yapıları oluşturulmuştur. Bu sayede proje sadece bir demo değil, gerçek bir sektörel uygulamaya dönüştürülebilecek nitelikte güçlü bir temel kazanmıştır. Projede eksiklikler muhakkak vardır. Bu bir eğitim projesidir.
 
+### 📂 Proje Yapısı
+- Jwt.PresentationLayer → MVC Controller & View katmanı
+- Jwt.ApiLayer → RESTful API uç noktaları, dış sistemlerle entegrasyon
+- Jwt.DtoLayer → Veri transfer objeleri (DTO)
+- Jwt.BusinessLayer → İş kuralları ve ML model entegrasyonu
+- Jwt.DataAccessLayer → Entity Framework Core ile veri erişim katmanı
+- Jwt.EntityLayer → Entity tanımları
+
 ---
 
 ### 🌟 Proje Özellikleri
