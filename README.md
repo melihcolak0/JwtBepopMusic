@@ -7,7 +7,7 @@ Veri tabanı olarak Microsoft SQL Server üzerinde ilişkisel tablolar tasarlanm
 
 ---
 
-🚀 Proje Özellikleri
+### 🌟 Proje Özellikleri
 
 🔐 JWT Tabanlı Kimlik Doğrulama
 - Kullanıcıların kayıt, giriş ve çıkış işlemleri JWT (JSON Web Token) ile güvenli bir şekilde yönetilmektedir. Bu sayede kullanıcılar sadece kendi verilerine erişebilir ve yetkisiz girişler engellenir.
@@ -31,46 +31,26 @@ Veri tabanı olarak Microsoft SQL Server üzerinde ilişkisel tablolar tasarlanm
 - Örnek paketler: Basic, Premium. Bu yapı, uygulamanın esnekliğini artırır ve farklı abonelik seviyeleri için uyarlanabilir.
 
 🎨 Kullanıcı Arayüzü
-Bepop teması üzerine modern, responsive ve kullanıcı dostu bir arayüz tasarlanmıştır.
-Şarkı oynatma butonları, tür filtreleme ve hızlı erişim özellikleri ile kullanıcı deneyimi optimize edilmiştir.
+- Bepop teması üzerine modern, responsive ve kullanıcı dostu bir arayüz tasarlanmıştır.
+- Şarkı oynatma butonları, tür filtreleme ve hızlı erişim özellikleri ile kullanıcı deneyimi optimize edilmiştir.
 
 ---
 
 ### 🚀 Kullandığım Teknolojiler
-- 💻 ASP.NET Core 9.0 → Projenin backend kısmı, modern .NET Core mimarisiyle geliştirildi.
-- 🗂 CQRS (Command Query Responsibility Segregation) → Okuma (Query) ve yazma (Command) işlemleri ayrıştırıldı, temiz kod ve sürdürülebilirlik sağlandı.
-- 📐 Tek Katmanlı Yapı → Tek katman üzerinde klasörler ile ayrılmış dosya düzeni sağlandı.
-- 🗄️ MS SQL Server → Entity'ler ve İlişkili Tablolar MS SQL Server üzerinde düzenlendi.
-- 🖼 ViewComponent → Tekrarlayan UI parçalarını yönetmek için kullanıldı.
-- 🎨 HTML5, CSS3, JavaScript, Bootstrap → Arayüz tasarımı.
-- 🌍 Hugging Face – Helsinki NLP → Türkçe ↔ İngilizce otomatik çeviri için kullanıldı.
-- 🛢 RapidAPI Entegrasyonları:
-- ⛽ Yakıt Fiyatları API → Türkiye’deki benzin, motorin ve LPG fiyatları.
-- ✈️ Havalimanları API → Türkiye’deki havalimanlarının listelenmesi.
-- 📏 Havalimanları Arası Mesafe API → İki havalimanı arasındaki mesafeyi hesaplama.
-- 🤖 Chatbot API (Mesaj Yanıtı) → Müşterilerin sorularını cevaplayan basit yapay zekâ destekli sohbet botu.
-- 🚗 Chatbot API (Araç Öneri Asistanı) → Müşterilere araç önerileri yapan araç öneri asistanı.
+- 💻 ASP.NET Core 6.0 → Projenin backend kısmı, modern .NET Core mimarisiyle geliştirildi.
+- 📂 N-Katmanlı Yapı → Altı katman üzerinden yönetilebilir ve genişletilebilir bir yapı sağlandı.
+- 🗄 Entity Framework Core → Veritabanı işlemleri için kullanıldı.
+- 📊 LINQ → Veri sorgulama ve işleme için kullanıldı.
+- 🛢 Microsoft SQL Server → Entity’ler ve ilişkili tablolar burada düzenlendi.
+- 🖼 ViewComponent → Tekrarlayan UI parçalarının yönetimi için kullanıldı.
+- 🎨 HTML5, CSS3, JavaScript, Bootstrap → Modern ve responsive arayüz tasarımı.
+- 🔐 JWT Authentication → Güvenli kullanıcı giriş ve kayıt işlemleri için kullanıldı.
+- 🤖 ML.NET → Kullanıcıların geçmiş dinleme alışkanlıklarına dayalı öneri sistemi geliştirildi.
 
-🖥 Backend:
-- ⚡ ASP.NET Core 6.0
-- 🗄 Entity Framework Core
-- 📊 LINQ ile veri işleme
-
-🌐 Frontend:
-- 📝 Razor sayfaları
-- 💻 HTML5, CSS3, JavaScript
-
-🎨 AdminLTE arayüz kütüphanesi
-🗃 Veritabanı:
-🛢 SQL Server, kullanıcı ve şarkı verilerinin yönetimi için kullanılmıştır
-🔐 Authentication:
-🔑 JWT (JSON Web Token) ile güvenli kullanıcı kimlik doğrulama
-🤖 Machine Learning:
-🧠 ML.NET kullanılarak, kullanıcıların geçmiş dinleme alışkanlıklarına dayalı öneri sistemi geliştirilmiştir
-
+<br>
 Projede genel anlamda 2 bölüm bulunmaktadır.<br>
-- Ana Sayfa: Burada kullanıcı, araç kiralam sitesinin detaylarını görmektedir. İstediği takdirde uygun araç modeli ve tarihe göre rezervasyonunu yapabilir. Bize Ulaşın bölümünden de firmaya mesaj gönderebilir.
-- Admin Paneli: Burada admin tarafından hakkında, rezervasyonlar, arabalar, hava limanları gibi bölümlerin CRUD işlemleri yapılmaktadır. Dashboard bölümünde ise bazı istatistikler yer almaktadır.
+- Ana Sayfa: Burada kullanıcı, kayıt olduğu paket seviyesine göre şarkı dinleme, kendi listelerini oluşturma, istediği sanatçının şarkılarını ve detaylarını görüntüleme gibi birçok işlemi yapabilmektedir.
+- Admin Paneli: Burada admin tarafından paketler, şarkılar, kullanıcılar, kullanıcı-şarkı geçmişi gibi bölümler ile ilgili CRUD işlemler gerçekleştirilir. Dashboard bölümünde ise bazı istatistikler yer almaktadır.
 
 ---
 
