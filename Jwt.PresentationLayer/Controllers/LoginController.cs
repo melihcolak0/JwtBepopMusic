@@ -21,43 +21,7 @@ namespace Jwt.PresentationLayer.Controllers
         public IActionResult Index()
         {
             return View();
-        }
-
-        //[HttpPost]
-        //public async Task<IActionResult> Index(LoginUserDto model)
-        //{
-        //    if (!ModelState.IsValid)
-        //        return View(model);
-
-        //    var client = _httpClientFactory.CreateClient();
-
-        //    var jsonData = JsonSerializer.Serialize(model);
-        //    var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-
-        //    var response = await client.PostAsync("https://localhost:7157/api/Auth/login", content);
-
-        //    if (response.IsSuccessStatusCode)
-        //    {
-        //        var responseData = await response.Content.ReadAsStringAsync();
-        //        var json = JsonSerializer.Deserialize<JsonElement>(responseData);
-        //        var token = json.GetProperty("token").GetString();
-
-        //        HttpContext.Session.SetString("JWToken", token);
-
-        //        return RedirectToAction("Index", "Default");
-        //    }
-
-        //    ModelState.AddModelError("", "Email veya şifre hatalı!");
-        //    return View(model);
-        //}
-
-        //[HttpGet]
-        //public IActionResult Logout()
-        //{
-        //    HttpContext.Session.Remove("JWToken");
-
-        //    return RedirectToAction("Index");
-        //}
+        }        
 
         [HttpPost]
         public async Task<IActionResult> Index(LoginUserDto model)

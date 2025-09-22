@@ -14,21 +14,7 @@ namespace Jwt.PresentationLayer.Controllers
         public AdminUserSongHistoryController(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
-        }
-
-        //public async Task<IActionResult> Index()
-        //{
-        //    var client = _httpClientFactory.CreateClient();
-        //    var response = await client.GetAsync("https://localhost:7157/api/UserSongHistory/GetUserSongHistoriesWithUserAndSong");
-
-        //    if (!response.IsSuccessStatusCode)
-        //        return View(new List<ResultUserSongHistoryDto>());
-
-        //    var json = await response.Content.ReadAsStringAsync();
-        //    var values = JsonSerializer.Deserialize<List<ResultUserSongHistoryDto>>(json, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-
-        //    return View(values);
-        //}
+        }        
 
         public async Task<IActionResult> Index(int page = 1, int pageSize = 10)
         {

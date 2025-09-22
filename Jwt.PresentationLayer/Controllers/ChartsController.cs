@@ -47,7 +47,7 @@ namespace Jwt.PresentationLayer.Controllers
             }
             ViewBag.UserPackageId = userPackageId;
 
-            // 🎵 Haftanın en çok dinlenen son 10 şarkısı
+            // Haftanın en çok dinlenen son 10 şarkısı
             var client = _httpClientFactory.CreateClient();
             var response = await client.GetAsync($"https://localhost:7157/api/Song/GetListLast10SongsAWeekByPackageLevel/{userPackageId}");
             var json = await response.Content.ReadAsStringAsync();
