@@ -58,5 +58,55 @@ Projede genel anlamda 2 bölüm bulunmaktadır.<br>
 
 ### :triangular_flag_on_post: Ana Sayfa
 <div align="center">
-  <img src="https://github.com/melihcolak0/CqrsCentalRentACar/blob/1037666abed69f81bef1604e4304bf57ec771770/ss3/screencapture-localhost-7100-Default-Index-2025-08-26-15_47_20.png" alt="image alt">
+  <img src="https://github.com/melihcolak0/JwtBepopMusic/blob/b73981baf604b55fca3bf5971cfd0df627468dfe/ss/screencapture-localhost-7179-Starter-Index-2025-09-21-18_58_00.png" alt="image alt">
+</div>
+<div align="center">
+  <img src="https://github.com/melihcolak0/JwtBepopMusic/blob/b73981baf604b55fca3bf5971cfd0df627468dfe/ss/screencapture-localhost-7179-Default-2025-09-21-18_49_45.png" alt="image alt">
+</div>
+<div align="center">
+  <img src="https://github.com/melihcolak0/JwtBepopMusic/blob/b73981baf604b55fca3bf5971cfd0df627468dfe/ss/screencapture-localhost-7179-Charts-Index-2025-09-21-18_50_07.png" alt="image alt">
+</div>
+<div align="center">
+  <img src="https://github.com/melihcolak0/JwtBepopMusic/blob/b73981baf604b55fca3bf5971cfd0df627468dfe/ss/screencapture-localhost-7179-Genres-Index-2025-09-21-18_50_18.png" alt="image alt">
+</div>
+<div align="center">
+  <img src="https://github.com/melihcolak0/JwtBepopMusic/blob/b73981baf604b55fca3bf5971cfd0df627468dfe/ss/screencapture-localhost-7179-Genres-GetSongById-75-2025-09-21-18_58_45.png" alt="image alt">
+</div>
+<div align="center">
+  <img src="https://github.com/melihcolak0/JwtBepopMusic/blob/afcba85fc3b353f2002c367c35fc463b766767c7/ss2/screencapture-localhost-7179-Artists-Index-2025-09-22-15_50_32.png" alt="image alt">
+</div>
+<div align="center">
+  <img src="https://github.com/melihcolak0/JwtBepopMusic/blob/b73981baf604b55fca3bf5971cfd0df627468dfe/ss/screencapture-localhost-7179-Artists-GetArtistByName-2025-09-21-19_00_53.png" alt="image alt">
+</div>
+<div align="center">
+  <img src="https://github.com/melihcolak0/JwtBepopMusic/blob/b73981baf604b55fca3bf5971cfd0df627468dfe/ss/screencapture-localhost-7179-UpgradePackage-Index-2025-09-22-13_58_33.png" alt="image alt">
+</div>
+<div align="center">
+  <img src="https://github.com/melihcolak0/JwtBepopMusic/blob/b73981baf604b55fca3bf5971cfd0df627468dfe/ss/screencapture-localhost-7179-register-Index-2025-09-21-19_01_28.png" alt="image alt">
+</div>
+<div align="center">
+  <img src="https://github.com/melihcolak0/JwtBepopMusic/blob/b73981baf604b55fca3bf5971cfd0df627468dfe/ss/screencapture-localhost-7179-Login-Index-2025-09-21-19_01_07.png" alt="image alt">
+</div>
+<br>
+### :triangular_flag_on_post: Admin Paneli
+<div align="center">
+  <img src="https://github.com/melihcolak0/JwtBepopMusic/blob/b73981baf604b55fca3bf5971cfd0df627468dfe/ss/screencapture-localhost-7179-AdminDashboard-Index-2025-09-21-19_02_13.png" alt="image alt">
+</div>
+<div align="center">
+  <img src="https://github.com/melihcolak0/JwtBepopMusic/blob/b73981baf604b55fca3bf5971cfd0df627468dfe/ss/screencapture-localhost-7179-AdminPackage-Index-2025-09-21-19_02_32.png" alt="image alt">
+</div>
+<div align="center">
+  <img src="https://github.com/melihcolak0/JwtBepopMusic/blob/b73981baf604b55fca3bf5971cfd0df627468dfe/ss/screencapture-localhost-7179-AdminPackage-CreatePackage-2025-09-21-19_02_47.png" alt="image alt">
+</div>
+<div align="center">
+  <img src="https://github.com/melihcolak0/JwtBepopMusic/blob/b73981baf604b55fca3bf5971cfd0df627468dfe/ss/screencapture-localhost-7179-AdminPackage-UpdatePackage-6-2025-09-21-19_02_57.png" alt="image alt">
+</div>
+<div align="center">
+  <img src="https://github.com/melihcolak0/JwtBepopMusic/blob/b73981baf604b55fca3bf5971cfd0df627468dfe/ss/localhost_7179_AdminSong_Index.png" alt="image alt">
+</div>
+<div align="center">
+  <img src="https://github.com/melihcolak0/JwtBepopMusic/blob/b73981baf604b55fca3bf5971cfd0df627468dfe/ss/screencapture-localhost-7179-AdminUser-Index-2025-09-21-19_03_56.png" alt="image alt">
+</div>
+<div align="center">
+  <img src="https://github.com/melihcolak0/JwtBepopMusic/blob/b73981baf604b55fca3bf5971cfd0df627468dfe/ss/screencapture-localhost-7179-AdminUserSongHistory-Index-2025-09-21-19_04_06.png" alt="image alt">
 </div>
