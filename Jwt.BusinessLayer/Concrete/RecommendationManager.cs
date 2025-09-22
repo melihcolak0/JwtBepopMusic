@@ -34,7 +34,7 @@ namespace Jwt.BusinessLayer.Concrete
             _mlContext = new MLContext();
         }       
 
-        private const string ModelPath = "D:\\Dosyalar\\Yazılım\\Murat Yücedağ Full Stack .Net Core Development Kursu\\Full-Stack .NET Core Development Notları\\Proje 12 (JWT)\\recommendationModel.zip";
+        private const string ModelPath = "recommendationModel.zip";
 
         public async Task TrainModelAsync()
         {
