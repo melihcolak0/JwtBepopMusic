@@ -49,7 +49,7 @@ Veri tabanı olarak Microsoft SQL Server üzerinde ilişkisel tablolar tasarlanm
 
 <br>
 Projede genel anlamda 2 bölüm bulunmaktadır.<br>
-- Ana Sayfa: Burada kullanıcı, kayıt olduğu paket seviyesine göre şarkı dinleme, kendi listelerini oluşturma, istediği sanatçının şarkılarını ve detaylarını görüntüleme gibi birçok işlemi yapabilmektedir.
+- Ana Sayfa: Burada kullanıcı, kayıt olduğu paket seviyesine göre şarkı dinleme, kendi listelerini oluşturma, istediği sanatçının şarkılarını ve detaylarını görüntüleme gibi birçok işlemi yapabilmektedir.<br>
 - Admin Paneli: Burada admin tarafından paketler, şarkılar, kullanıcılar, kullanıcı-şarkı geçmişi gibi bölümler ile ilgili CRUD işlemler gerçekleştirilir. Dashboard bölümünde ise bazı istatistikler yer almaktadır.
 
 ---
@@ -64,10 +64,10 @@ Projede genel anlamda 2 bölüm bulunmaktadır.<br>
   <img src="https://github.com/melihcolak0/JwtBepopMusic/blob/b73981baf604b55fca3bf5971cfd0df627468dfe/ss/screencapture-localhost-7179-Default-2025-09-21-18_49_45.png" alt="image alt">
 </div>
 <div align="center">
-  <img src="https://github.com/melihcolak0/JwtBepopMusic/blob/b73981baf604b55fca3bf5971cfd0df627468dfe/ss/screencapture-localhost-7179-Charts-Index-2025-09-21-18_50_07.png" alt="image alt">
+  <img src="https://github.com/melihcolak0/JwtBepopMusic/blob/c9afd07ef596f7bbb4dce9b26075715e56d26c0e/ss2/screencapture-localhost-7179-Charts-Index-2025-09-22-16_08_08.png" alt="image alt">
 </div>
 <div align="center">
-  <img src="https://github.com/melihcolak0/JwtBepopMusic/blob/b73981baf604b55fca3bf5971cfd0df627468dfe/ss/screencapture-localhost-7179-Genres-Index-2025-09-21-18_50_18.png" alt="image alt">
+  <img src="https://github.com/melihcolak0/JwtBepopMusic/blob/c9afd07ef596f7bbb4dce9b26075715e56d26c0e/ss2/screencapture-localhost-7179-Genres-Index-2025-09-22-16_15_34.png" alt="image alt">
 </div>
 <div align="center">
   <img src="https://github.com/melihcolak0/JwtBepopMusic/blob/b73981baf604b55fca3bf5971cfd0df627468dfe/ss/screencapture-localhost-7179-Genres-GetSongById-75-2025-09-21-18_58_45.png" alt="image alt">
@@ -88,6 +88,7 @@ Projede genel anlamda 2 bölüm bulunmaktadır.<br>
   <img src="https://github.com/melihcolak0/JwtBepopMusic/blob/b73981baf604b55fca3bf5971cfd0df627468dfe/ss/screencapture-localhost-7179-Login-Index-2025-09-21-19_01_07.png" alt="image alt">
 </div>
 <br>
+
 ### :triangular_flag_on_post: Admin Paneli
 <div align="center">
   <img src="https://github.com/melihcolak0/JwtBepopMusic/blob/b73981baf604b55fca3bf5971cfd0df627468dfe/ss/screencapture-localhost-7179-AdminDashboard-Index-2025-09-21-19_02_13.png" alt="image alt">
