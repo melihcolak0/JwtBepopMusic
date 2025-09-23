@@ -12,20 +12,27 @@ namespace Jwt.BusinessLayer.Concrete
 {
     public class RecommendationManager : GenericManager<Recommendation>, IRecommendationService
     {
+        private readonly IUserDal _userDal;
+        private readonly ISongDal _songDal;
         private readonly IRecommendationDal _recommendationDal;
         private readonly RecommendationEngine _mlEngine;
         private readonly JwtContext _context;
         private readonly MLContext _mlContext;
 
         public RecommendationManager(
-            IRecommendationDal recommendationDal,            
+            IRecommendationDal recommendationDal,
+            IUserDal userDal,
+            ISongDal songDal,
             JwtContext context
         ) : base(recommendationDal)
-        {            
+        {
+            _userDal = userDal;
+            _songDal = songDal;
+            _context = context;
             _recommendationDal = recommendationDal;
-            _mlEngine = new RecommendationEngine();
+            _mlEngine = new RecommendationEngine(); // ML katmanı
             _mlContext = new MLContext();
-        }       
+        }
 
         private const string ModelPath = "recommendationModel.zip";
 
