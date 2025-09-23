@@ -12,25 +12,18 @@ namespace Jwt.BusinessLayer.Concrete
 {
     public class RecommendationManager : GenericManager<Recommendation>, IRecommendationService
     {
-        private readonly IUserDal _userDal;
-        private readonly ISongDal _songDal;
         private readonly IRecommendationDal _recommendationDal;
         private readonly RecommendationEngine _mlEngine;
         private readonly JwtContext _context;
         private readonly MLContext _mlContext;
 
         public RecommendationManager(
-            IRecommendationDal recommendationDal,
-            IUserDal userDal,
-            ISongDal songDal,
+            IRecommendationDal recommendationDal,            
             JwtContext context
         ) : base(recommendationDal)
-        {
-            _userDal = userDal;
-            _songDal = songDal;
-            _context = context;
+        {            
             _recommendationDal = recommendationDal;
-            _mlEngine = new RecommendationEngine(); // ML katmanı
+            _mlEngine = new RecommendationEngine();
             _mlContext = new MLContext();
         }       
 
@@ -45,7 +38,7 @@ namespace Jwt.BusinessLayer.Concrete
             {
                 UserId = h.UserId,
                 SongId = h.SongId,
-                Rating = (float)h.ListenCount // veya normalize ettiğin hali
+                Rating = (float)h.ListenCount
             }).ToList();
 
             _mlEngine.TrainAndSave(trainingData, ModelPath);
@@ -53,7 +46,6 @@ namespace Jwt.BusinessLayer.Concrete
 
         public async Task<IEnumerable<ResultRecommendationDto>> GetRecommendationsAsync(int userId, int count = 5)
         {
-            // Eğer model yoksa ilk kez eğit
             if (!File.Exists(ModelPath))
             {
                 var allHistoryInit = await _context.UserSongHistories
@@ -74,15 +66,12 @@ namespace Jwt.BusinessLayer.Concrete
 
                     }).ToList();
 
-                    // Modeli eğit ve kaydet
                     _mlEngine.TrainAndSave(trainingDataInit, ModelPath);
                 }
             }
 
-            // Kaydedilen modeli yükle
             var model = _mlEngine.LoadModel(ModelPath);
 
-            // 1️ Tüm kullanıcıların geçmişi (artık sadece prediction için lazım)
             var allHistory = await _context.UserSongHistories
                 .Include(h => h.Song)
                 .ToListAsync();
@@ -90,10 +79,8 @@ namespace Jwt.BusinessLayer.Concrete
             if (!allHistory.Any())
                 return new List<ResultRecommendationDto>();
 
-            // 2️ Kullanıcının geçmişi
             var userHistory = allHistory.Where(h => h.UserId == userId).ToList();
 
-            // 3️ Cold start: kullanıcı geçmişi yoksa popüler şarkılar
             if (!userHistory.Any())
             {
                 var topSongs = await _context.Songs
@@ -111,7 +98,6 @@ namespace Jwt.BusinessLayer.Concrete
                 }).ToList();
             }
 
-            // 4️ Favori tür ve sanatçı
             var favoriteGenres = userHistory
                 .GroupBy(h => h.Song.Genre)
                 .OrderByDescending(g => g.Sum(h => h.ListenCount))
@@ -126,7 +112,6 @@ namespace Jwt.BusinessLayer.Concrete
                 .Take(3)
                 .ToList();
 
-            // 5️ Dinlenmemiş şarkılar
             var allSongs = await _context.Songs.ToListAsync();
             var unlistenedSongs = allSongs
                 .Where(s => !userHistory.Any(h => h.SongId == s.Id))
@@ -135,7 +120,6 @@ namespace Jwt.BusinessLayer.Concrete
             if (!unlistenedSongs.Any())
                 return new List<ResultRecommendationDto>();
 
-            // 6️ Batch tahmin
             var predictionData = _mlContext.Data.LoadFromEnumerable(
                 unlistenedSongs.Select(s => new UserSongRating { UserId = userId, SongId = s.Id })
             );
@@ -150,7 +134,6 @@ namespace Jwt.BusinessLayer.Concrete
                 })
                 .ToList();
                        
-            // 7️ Hibrit skor: ML + içerik benzerliği
             var recommendedSongs = mlScores
                 .Select(x =>
                 {

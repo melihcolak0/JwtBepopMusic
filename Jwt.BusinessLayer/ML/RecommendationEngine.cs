@@ -13,7 +13,6 @@ namespace Jwt.BusinessLayer.ML
             _mlContext = new MLContext();
         }       
 
-        // Pipeline tanýmý
         private IEstimator<ITransformer> BuildPipeline()
         {
             return _mlContext.Transforms.Conversion
@@ -29,7 +28,6 @@ namespace Jwt.BusinessLayer.ML
                 ));
         }
 
-        // Normal Train
         public ITransformer Train(IEnumerable<UserSongRating> data)
         {
             var trainingData = _mlContext.Data.LoadFromEnumerable(data);
@@ -37,7 +35,6 @@ namespace Jwt.BusinessLayer.ML
             return pipeline.Fit(trainingData);
         }
 
-        // Train + Save (offline eðitim)
         public void TrainAndSave(IEnumerable<UserSongRating> data, string modelPath)
         {
             var trainingData = _mlContext.Data.LoadFromEnumerable(data);
@@ -48,14 +45,13 @@ namespace Jwt.BusinessLayer.ML
             _mlContext.Model.Save(model, trainingData.Schema, fs);
         }
 
-        // Load saved model
         public ITransformer LoadModel(string modelPath)
         {
             using var fs = File.OpenRead(modelPath);
             return _mlContext.Model.Load(fs, out _);
         }
 
-        // Prediction
+       
         public List<int> PredictTopNSongs(ITransformer model, int userId, IEnumerable<int> allSongIds, int n = 5)
         {
             var predictionEngine = _mlContext.Model.CreatePredictionEngine<UserSongRating, SongRatingPrediction>(model);
@@ -79,6 +75,6 @@ namespace Jwt.BusinessLayer.ML
 
     public class SongRatingPrediction
     {
-        public float Score { get; set; }  // ML.NET tahmin skoru
+        public float Score { get; set; }
     }
 }
